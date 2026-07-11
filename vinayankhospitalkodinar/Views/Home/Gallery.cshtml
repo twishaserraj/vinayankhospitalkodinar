@@ -1,0 +1,120 @@
+﻿<section class="gallery-section" id="gallery">
+    <div class="container">
+        <div class="section-header" style="padding-top:60px;">
+            @* <div class="section-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                <span>Hospital Gallery</span>
+            </div> *@
+            <h2 class="section-title reveal">Inside <span class="gradient-text">Vinayak Hospital</span></h2>
+            <p class="section-subtitle reveal">A glimpse into our modern facilities, compassionate care, and world-class medical environment.</p>
+        </div>
+
+        <div class="gallery-grid">
+            @{
+                var galleryItems = new[]
+                {
+                        new
+                        {
+                        Src = "/images/reception.jpeg",
+                        Alt = "Mother & Baby Care",
+                        Category = "Happy Family",
+                        Span = "span-2"
+                        },
+
+                        new
+                        {
+                        Src = "/images/child-checkup-1.jpeg",
+                        Alt = "Child Checkup",
+                        Category = "Pediatric",
+                        Span = ""
+                        },
+
+                        new
+                        {
+                        Src = "/images/newborn-care.jpeg",
+                        Alt = "Newborn Care",
+                        Category = "Newborn",
+                        Span = ""
+                        },
+
+                        new
+                        {
+                        Src = "/images/doctor-profile.jpeg",
+                        Alt = "Doctor Profile",
+                        Category = "Doctor",
+                        Span = ""
+                        },
+
+                        new
+                        {
+                        Src = "/images/operation-theatre.jpeg",
+                        Alt = "Operation Theatre",
+                        Category = "Operation",
+                        Span = ""
+                        },
+
+                        new
+                        {
+                        Src = "/images/Maternity.png",
+                        Alt = "Mother & Baby Care",
+                        Category = "Maternity",
+                        Span = "span-2"
+                        },
+
+                        new
+                        {
+                        Src = "/images/Laboratory.png",
+                        Alt = "Medical Laboratory",
+                        Category = "Laboratory",
+                        Span = ""
+                        },
+
+                        new
+                        {
+                        Src = "/images/Neonatal.png",
+                        Alt = "NICU",
+                        Category = "NICU",
+                        Span = ""
+                        },
+
+                        new
+                        {
+                        Src = "/images/child-checkup-2.jpeg",
+                        Alt = "Child Consultation",
+                        Category = "Consultation",
+                        Span = ""
+                        },
+
+                        new
+                        {
+                        Src = "/images/EMERGENCY.png",
+                        Alt = "Emergency",
+                        Category = "Emergency",
+                        Span = ""
+                        }
+                        };
+            }
+            @foreach (var img in galleryItems)
+            {
+                <div class="gallery-item @img.Span reveal" data-category="@img.Category">
+                    <img src="@img.Src" alt="@img.Alt" loading="lazy" />
+                    <div class="gallery-overlay">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </div>
+                    <div class="gallery-category">@img.Category</div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-inner">
+            <img id="lightbox-img" src="" alt="" />
+            <button id="lightbox-close" class="lightbox-close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+</section>

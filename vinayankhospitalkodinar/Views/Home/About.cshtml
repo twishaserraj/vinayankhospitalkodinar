@@ -1,0 +1,78 @@
+﻿
+
+<section class="about-section" id="about">
+    <div class="container">
+        <div class="section-header" style="padding-top:35px;">
+            @* <div class="section-badge" style="padding:45px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span>About Our Hospital</span>
+            </div> *@
+            <h2 class="section-title reveal">Dedicated to Your <span class="gradient-text">Health &amp; Wellbeing</span></h2>
+            <p class="section-subtitle reveal">Vinayak Hospital has been a beacon of trusted healthcare for over a decade, providing compassionate, expert care to women and children across the region.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            @{
+                var stats = new[] {
+                        new { End = 5000, Suffix = "+", Label = "Happy Patients", Sub = "Families served", Bg = "#EFF6FF", IconBg = "#0EA5E9" },
+                        new { End = 10, Suffix = "+", Label = "Years Experience", Sub = "Medical excellence", Bg = "#F0FDF4", IconBg = "#16A34A" },
+                        new { End = 24, Suffix = "/7", Label = "Support", Sub = "Always available", Bg = "#FFF7ED", IconBg = "#EA580C" },
+                        new { End = 98, Suffix = "%", Label = "Satisfaction", Sub = "Patient feedback", Bg = "#FFF1F2", IconBg = "#E11D48" }
+                        };
+            }
+            @foreach (var stat in stats)
+            {
+                <div class="stat-card reveal" style="background:@stat.Bg">
+                    <div class="stat-icon" style="background:@stat.IconBg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+                    </div>
+                    <div class="stat-number"><span class="counter" data-end="@stat.End" data-suffix="@stat.Suffix">@stat.End@stat.Suffix</span></div>
+                    <div class="stat-label">@stat.Label</div>
+                    <div class="stat-sub">@stat.Sub</div>
+                </div>
+            }
+        </div>
+
+        <!-- Mission & Vision -->
+        <div class="mission-vision-grid">
+                <div class="mv-card reveal-left" style="background:linear-gradient(135deg,#EFF6FF 0%,#DBEAFE 100%)">
+                    <div class="mv-card-icon" style="background:#0EA5E9">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To provide the highest quality, accessible healthcare to every woman and child with compassion, integrity, and respect — ensuring every patient receives personalized, evidence-based treatment in a safe and caring environment.</p>
+                </div>
+                <div class="mv-card reveal-right" style="background:linear-gradient(135deg,#F0FDF4 0%,#DCFCE7 100%)">
+                    <div class="mv-card-icon" style="background:#16A34A">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be the most trusted and preferred healthcare destination for families, recognized for our commitment to excellence, innovation, and patient-centered care that transforms lives and builds healthier communities.</p>
+                </div>
+            </div> 
+
+        <!-- Core Values -->
+        <h3 style="font-size:24px;font-weight:700;color:#0F172A;text-align:center;margin-bottom:32px" class="reveal">Our Core Values</h3>
+        <div class="values-grid">
+            @{
+                var values = new[] {
+                        new { Title = "Compassionate Care", Desc = "We treat every patient with empathy and personal attention." },
+                        new { Title = "Medical Excellence", Desc = "State-of-the-art equipment with evidence-based medicine." },
+                        new { Title = "Family-Centered", Desc = "We involve families in care decisions for better outcomes." },
+                        new { Title = "Innovation", Desc = "Continually adopting the latest advancements in healthcare." }
+                        };
+            }
+            @foreach (var val in values)
+            {
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <h4>@val.Title</h4>
+                    <p>@val.Desc</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,1121 @@
+﻿@model List<vinayankhospitalkodinar.Models.Review>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<!-- Loading Screen -->
+@* <div id="loading-screen"> *@
+    @* <div class="loading-particles">
+        <span style="width:6px;height:6px;left:10%;top:20%;animation-duration:3s;animation-delay:0s"></span>
+        <span style="width:4px;height:4px;left:25%;top:60%;animation-duration:4s;animation-delay:0.5s"></span>
+        <span style="width:5px;height:5px;left:75%;top:30%;animation-duration:3.5s;animation-delay:1s"></span>
+        <span style="width:3px;height:3px;left:85%;top:70%;animation-duration:5s;animation-delay:0.2s"></span>
+        <span style="width:6px;height:6px;left:50%;top:80%;animation-duration:4.5s;animation-delay:0.8s"></span>
+        <span style="width:4px;height:4px;left:40%;top:15%;animation-duration:3s;animation-delay:1.2s"></span>
+    </div> *@
+    @* <div class="loading-logo-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z" />
+        </svg>
+    </div> *@
+    
+      
+     <!-- Splash Page -->
+
+@*     <div class="loading-logo-icon">
+    <img src="~/images/logo.png"
+         alt="Vinayak Hospital Logo"
+         style=" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"; stroke-linecap="round"; stroke-linejoin="round";">
+</div> *@
+    @* <div style="text-align:center">
+        <h1 style="font-size:36px;font-weight:700;color:white;letter-spacing:0.15em;margin-bottom:4px">Vinayak Children & Maternity</h1>
+        <p style="color:#0EA5E9;font-size:13px;letter-spacing:0.4em;">Hospital</p>
+    </div> *@
+    @* <div class="loading-progress-bar">
+        <div class="loading-progress-fill"></div>
+    </div> *@
+    @* <p id="loading-pct" style="color:#475569;font-size:12px;letter-spacing:0.15em;margin-top:12px">0%</p> *@
+@* </div> *@
+
+<!-- Scroll Progress Bar -->
+@* <div class="scroll-progress-bar"></div> *@
+
+
+<!-- Main Content (hidden until loading done) -->
+@* <div id="main-content" style="display:none"> *@
+
+    <!-- ===== NAVBAR ===== -->
+    @* <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+<div class="nav-logo-icon">
+    <img src="~/images/logo (2).png"
+         alt="Vinayak Hospital Logo"
+         style="width:50px;height:50px;object-fit:contain;">
+</div>
+                <div class="nav-logo-text">
+                    <div class="nav-logo-name">Vinayak</div>
+                    <div class="nav-logo-sub">Hospital</div>
+                </div>
+            </a>
+
+            <div class="nav-links">
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-controller="Home" asp-action="About">About</a>
+                <a asp-controller="Home" asp-action="Doctors">Doctors</a>
+                <a asp-controller="Home" asp-action="Services">Services</a>
+                <a asp-controller="Home" asp-action="Gallery">Gallery</a>
+                <a asp-controller="Home" asp-action="Contact">Contact</a>
+            </div>
+
+            <div class="nav-cta">
+                <a href="tel:+919999999999" class="nav-phone">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.31 19.79 19.79 0 0 1 1.61 2.18 2 2 0 0 1 3.59 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>+91 99999 99999</span>
+                </a>
+                <a href="#appointment" class="btn-primary">Book Appointment</a>
+            </div>
+
+            <button class="nav-mobile-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="nav-mobile-menu">
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-controller="Home" asp-action="About">About</a>
+            <a asp-controller="Home" asp-action="Doctors">Doctors</a>
+            <a asp-controller="Home" asp-action="Services">Services</a>
+            <a asp-controller="Home" asp-action="Gallery">Gallery</a>
+            <a asp-controller="Home" asp-action="Contact">Contact</a>
+            <a href="#appointment" class="btn-primary" style="text-align:center;justify-content:center">Book Appointment</a>
+        </div>
+    </nav> *@
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero-section" id="hero">
+        <!-- Floating decorative orbs -->
+        <div class="hero-canvas">
+            <div class="hero-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(14,165,233,0.12) 0%,transparent 70%);left:30%;top:10%;animation:float 7s ease-in-out infinite"></div>
+            <div class="hero-orb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(220,252,231,0.6) 0%,transparent 70%);right:5%;bottom:15%"></div>
+            <!-- Floating particles -->
+            @for (int i = 0; i < 12; i++)
+            {
+                var size = (i % 3 + 1) * 4;
+                var left = (i * 8 + 5) % 90;
+                var top = (i * 7 + 10) % 80;
+                var delay = i * 0.3;
+                <div style="position:absolute;width:@(size)px;height:@(size)px;border-radius:50%;background:rgba(14,165,233,0.2);left:@(left)%;top:@(top)%;animation:particle-float @(3 + i % 3)s ease-in-out infinite;animation-delay:@(delay)s"></div>
+            }
+        </div>
+
+        <!-- Trust badges (desktop) -->
+        <div class="trust-badges-floating" style="position:absolute;inset:0;pointer-events:none">
+            <div class="trust-badge-item" style="right:28%;top:15%;animation-delay:1.2s">
+                <div class="trust-badge-icon" style="background:#DCFCE7">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <span class="trust-badge-text">ISO Certified</span>
+            </div>
+            <div class="trust-badge-item" style="right:2%;top:74%;animation-delay:1.5s">
+                <div class="trust-badge-icon" style="background:#FEF3C7">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <span class="trust-badge-text">24/7 Emergency</span>
+            </div>
+             @* <div class="trust-badge-item" style="left:5%;top:70%;animation-delay:1.8s">
+                <div class="trust-badge-icon" style="background:#FCE7F3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+                </div>
+                <span class="trust-badge-text">10+ Years</span>
+            </div>  *@
+            <div class="trust-badge-item" style="right:28%;top:75%;animation-delay:2.1s">
+                <div class="trust-badge-icon" style="background:#EFF6FF">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <span class="trust-badge-text">98% Satisfaction</span>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-grid">
+                <!-- Left Content -->
+                <div>
+                    <div class="trust-badge-pill">
+                        <span class="badge-dot"></span>
+                        <span style="color:#0369A1;font-size:14px;font-weight:500">Trusted Healthcare Since 2014</span>
+                    </div>
+
+                    <h1 class="hero-h1">
+                        <span style="color:#0F172A">VINAYAK</span><br />
+                        <span class="gradient-text">HOSPITAL</span>
+                    </h1>
+
+                    <h2 class="hero-h2">
+                        Comprehensive Care for
+                        <span style="color:#0EA5E9"> Women and Children</span>
+                    </h2>
+
+                    <p class="hero-p">
+                        Providing trusted pediatric and gynecological healthcare with compassion, expertise,
+                        and modern medical care. Your family's health is our highest priority.
+                    </p>
+
+                    @* <div class="hero-btns">
+                        <a href="#appointment" class="hero-btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            Book Appointment
+                        </a>
+                        <a href="tel:+919999999999" class="hero-btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.31 19.79 19.79 0 0 1 1.61 2.18 2 2 0 0 1 3.59 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            Call Now
+                        </a>
+                    </div> *@
+
+                    <div class="hero-stats">
+                        <div>
+                            <div class="hero-stat-number"><span class="counter" data-end="5000" data-suffix="+" data-duration="2000">5000+</span></div>
+                            <div class="hero-stat-label">Happy Patients</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-number"><span class="counter" data-end="10" data-suffix="+" data-duration="1500">10+</span></div>
+                            <div class="hero-stat-label">Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-number"><span class="counter" data-end="98" data-suffix="%" data-duration="1800">98%</span></div>
+                            <div class="hero-stat-label">Satisfaction Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="hero-visual">
+                    <div class="hero-circle-bg"></div>
+                    <div class="hero-circle-spin"></div>
+                    <div class="hero-center-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        <div>
+                            <div class="hero-center-card-title">Your Health</div>
+                            <div class="hero-center-card-sub">Our Priority</div>
+                        </div>
+                    </div>
+                    <div class="hero-float-badge glass" style="top:32px;right:-16px;animation:float 4s ease-in-out infinite">
+                        <div class="hero-float-badge-icon" style="background:#DCFCE7">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        </div>
+                        <div>
+                            <div class="hero-float-badge-title">Advanced Care</div>
+                            <div class="hero-float-badge-sub">Healthcare</div>
+                        </div>
+                    </div>
+                    <div class="hero-float-badge glass" style="bottom:48px;left:-32px;animation:float-reverse 5s ease-in-out infinite">
+                        <div class="hero-float-badge-icon" style="background:#FCE7F3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DB2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </div>
+                        <div>
+                            <div class="hero-float-badge-title">Compassionate</div>
+                            <div class="hero-float-badge-sub">Healthcare</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom wave -->
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block">
+                <path d="M0 80L48 72C96 64 192 48 288 40C384 32 480 32 576 38.7C672 45.3 768 58.7 864 61.3C960 64 1056 56 1152 50.7C1248 45.3 1344 42.7 1392 41.3L1440 40V80H0Z" fill="#caecfaf5" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <span>About Our Hospital</span>
+                </div>
+                <h2 class="section-title reveal">Dedicated to Your <span class="gradient-text">Health &amp; Wellbeing</span></h2>
+                <p class="section-subtitle reveal">Vinayak Hospital has been a beacon of trusted healthcare for over a decade, providing compassionate, expert care to women and children across the region.</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                @{
+                    var stats = new[] {
+                        new { End = 5000, Suffix = "+", Label = "Happy Patients", Sub = "Families served", Bg = "#EFF6FF", IconBg = "#0EA5E9" },
+                        new { End = 10, Suffix = "+", Label = "Years Experience", Sub = "Medical excellence", Bg = "#F0FDF4", IconBg = "#16A34A" },
+                        new { End = 24, Suffix = "/7", Label = "Support", Sub = "Always available", Bg = "#FFF7ED", IconBg = "#EA580C" },
+                        new { End = 98, Suffix = "%", Label = "Satisfaction", Sub = "Patient feedback", Bg = "#FFF1F2", IconBg = "#E11D48" }
+                    };
+                }
+                @foreach (var stat in stats)
+                {
+                    <div class="stat-card reveal" style="background:@stat.Bg">
+                        <div class="stat-icon" style="background:@stat.IconBg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+                        </div>
+                        <div class="stat-number"><span class="counter" data-end="@stat.End" data-suffix="@stat.Suffix">@stat.End@stat.Suffix</span></div>
+                        <div class="stat-label">@stat.Label</div>
+                        <div class="stat-sub">@stat.Sub</div>
+                    </div>
+                }
+            </div>
+
+            <!-- Mission & Vision -->
+            @* <div class="mission-vision-grid">
+                <div class="mv-card reveal-left" style="background:linear-gradient(135deg,#EFF6FF 0%,#DBEAFE 100%)">
+                    <div class="mv-card-icon" style="background:#0EA5E9">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To provide the highest quality, accessible healthcare to every woman and child with compassion, integrity, and respect — ensuring every patient receives personalized, evidence-based treatment in a safe and caring environment.</p>
+                </div>
+                <div class="mv-card reveal-right" style="background:linear-gradient(135deg,#F0FDF4 0%,#DCFCE7 100%)">
+                    <div class="mv-card-icon" style="background:#16A34A">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be the most trusted and preferred healthcare destination for families, recognized for our commitment to excellence, innovation, and patient-centered care that transforms lives and builds healthier communities.</p>
+                </div>
+            </div> *@
+
+            <!-- Core Values -->
+            <h3 style="font-size:21px;font-weight:600;color:#0F172A;text-align:center;margin-bottom:4px" class="reveal">Our Core Values</h3>
+            <div class="values-grid">
+                @{
+                    var values = new[] {
+                        new { Title = "Compassionate Care", Desc = "We treat every patient with empathy and personal attention." },
+                        new { Title = "Medical Excellence", Desc = "State-of-the-art equipment with evidence-based medicine." },
+                        new { Title = "Family-Centered", Desc = "We involve families in care decisions for better outcomes." },
+                        new { Title = "Innovation", Desc = "Continually adopting the latest advancements in healthcare." }
+                    };
+                }
+                @foreach (var val in values)
+                {
+                    <div class="value-card reveal">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <h4>@val.Title</h4>
+                        <p>@val.Desc</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DOCTORS SECTION ===== -->
+    <section class="doctors-section" id="doctors">
+        <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden">
+            <div style="position:absolute;top:80px;left:40px;width:288px;height:288px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.08) 0%,transparent 70%)" class="animate-float-reverse"></div>
+            <div style="position:absolute;bottom:80px;right:40px;width:256px;height:256px;border-radius:50%;background:radial-gradient(circle,rgba(236,72,153,0.08) 0%,transparent 70%)" class="animate-float"></div>
+        </div>
+        <div class="container" style="position:relative;z-index:1">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    <span>Our Specialist Doctors</span>
+                </div>
+                <h2 class="section-title reveal">Expert Doctors You Can <span class="gradient-text">Trust</span></h2>
+                <p class="section-subtitle reveal">Our highly qualified specialists bring years of experience and genuine compassion to every patient encounter.</p>
+            </div>
+
+            <div class="doctors-grid">
+                <!-- Pediatrician Card -->
+                <div class="doctor-card reveal-left" style="border:1px solid rgba(255,255,255,0.6)">
+                    <div style="position:absolute;inset:0;border-radius:24px;background:#EFF6FF"></div>
+                    <div class="doctor-card-inner" style="position:relative">
+                        <div class="doctor-header">
+                            <div style="display:flex;align-items:center;gap:16px">
+                                <div class="doctor-avatar" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h.01"></path><path d="M15 12h.01"></path><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"></path><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6 9 9 0 0 1 2.3-4L6 5"></path><path d="M6 5a9 9 0 0 1 2.6-2 2 2 0 0 0 3.9 0 9 9 0 0 1 5.5 4.3 2 2 0 0 1 0 3.4 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.4 9 9 0 0 1 5.6-2.3z"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="doctor-specialty" style="color:#0EA5E9">PEDIATRICIAN</div>
+                                    <div class="doctor-title">Dr Pradhyuman D Jadav (Child Specialist)</div>
+                                    <div class="doctor-stars">
+                                        @for (int i = 0; i < 5; i++)
+                                        {
+                                            <div class="doctor-star" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)"></div>
+                                        }
+                                        <span style="color:#64748B;font-size:12px;margin-left:4px">10+ Years</span>
+                                    </div>
+                                </div>
+                            </div>
+                            @* <div class="doctor-badge" style="background:rgba(14,165,233,0.1);color:#0EA5E9">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                Pediatric Excellence
+                            </div> *@
+                        </div>
+                        <p class="doctor-desc">Dedicated to the health and development of children from newborns through adolescence, providing comprehensive pediatric care with the latest medical expertise.</p>
+                        <div class="services-label">Services Offered</div> 
+                        <div class="doctor-services-grid">
+                            @foreach (var svc in new[] { "Child Nutrition Guidance", "Child Vaccination", "Growth Monitoring", "Newborn Care", "Pediatric Consultation", "Development Assessment" })
+                            {
+                                <div class="service-item">
+                                    
+                                    <div class="service-item-icon" style="background:rgba(14,165,233,0.1)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
+                                    <span>@svc</span>
+                                </div>
+                            }
+                        </div>
+                        <a asp-action="Contact" class="doctor-cta" style="background:linear-gradient(135deg,#0EA5E9,#0284C7);box-shadow:0 10px 30px rgba(14,165,233,0.3)">
+                            Book Consultation <span>→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Gynecologist Card -->
+                <div class="doctor-card reveal-right" style="border:1px solid rgba(255,255,255,0.6)">
+                    <div style="position:absolute;inset:0;border-radius:24px;background:#FFF1F2"></div>
+                    <div class="doctor-card-inner" style="position:relative">
+                        <div class="doctor-header">
+                            <div style="display:flex;align-items:center;gap:16px">
+                                <div class="doctor-avatar" style="background:linear-gradient(135deg,#EC4899,#BE185D)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3c0 1.7 1.3 3 3 3a3 3 0 0 0 3-3c0-1.7-1.3-3-3-3z"></path><path d="M12 8v13"></path><path d="M8 12a4 4 0 0 0 8 0"></path></svg>
+                                </div>
+                                <div>
+                                    <div class="doctor-specialty" style="color:#EC4899">GYNECOLOGIST</div>
+                                    <div class="doctor-title">Dr Hetal P Jadav (Women's Health Specialist)</div>
+                                    <div class="doctor-stars">
+                                        @for (int i = 0; i < 5; i++)
+                                        {
+                                            <div class="doctor-star" style="background:linear-gradient(135deg,#EC4899,#BE185D)"></div>
+                                        }
+                                        <span style="color:#64748B;font-size:12px;margin-left:4px">12+ Years</span>
+                                    </div>
+                                </div>
+                            </div>
+                            @* <div class="doctor-badge" style="background:rgba(236,72,153,0.1);color:#EC4899">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                Women's Wellness
+                            </div> *@
+                        </div>
+                        <p class="doctor-desc">Comprehensive women's healthcare from adolescence through menopause, offering expert gynecological care and obstetric services with compassion and expertise.</p>
+                        <div class="services-label">Services Offered</div>
+                        <div class="doctor-services-grid">
+                            @foreach (var svc in new[] { "Pregnancy Care", "Women's Health Checkups", "Prenatal Care", "Postnatal Care", "Menstrual Health", "Infertility Consultation" })
+                            {
+                                <div class="service-item">
+                                    <div class="service-item-icon" style="background:rgba(236,72,153,0.1)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
+                                    <span>@svc</span>
+                                </div>
+                            }
+                        </div> 
+                        <a asp-action="Contact" class="doctor-cta" style="background:linear-gradient(135deg,#EC4899,#BE185D);box-shadow:0 10px 30px rgba(236,72,153,0.3)">
+                            Book Consultation <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services-section" id="services">
+        <div style="position:absolute;inset:0;pointer-events:none">
+            <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;height:384px;background:radial-gradient(ellipse at center,rgba(14,165,233,0.04) 0%,transparent 70%)"></div>
+        </div>
+        <div class="container" style="position:relative;z-index:1">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Our Medical Services</span>
+                </div>
+                <h2 class="section-title reveal">Comprehensive <span class="gradient-text">Healthcare Services</span></h2>
+                <p class="section-subtitle reveal">A complete range of specialized medical services designed to meet every health need of women and children.</p>
+            </div>
+
+            <div class="services-grid">
+                @{
+                    var services = new[] {
+                        new { Title = "Child Vaccination", Desc = "Complete immunization schedules for all age groups to protect against preventable diseases.", Bg = "#EFF6FF", Accent = "#2563EB" },
+                        new { Title = "Newborn Care", Desc = "Specialized care for newborns including health assessments, feeding support, and early development.", Bg = "#F0FDF4", Accent = "#16A34A" },
+                        // new { Title = "Pediatric Consultation", Desc = "Expert consultation for childhood illnesses, infections, and general health concerns.", Bg = "#FFF7ED", Accent = "#EA580C" },
+                        // new { Title = "Child Nutrition", Desc = "Personalized nutritional guidance to ensure optimal growth and healthy development.", Bg = "#FEFCE8", Accent = "#CA8A04" },
+                        // new { Title = "Pregnancy Care", Desc = "Comprehensive antenatal and obstetric care throughout your pregnancy journey.", Bg = "#FFF1F2", Accent = "#E11D48" },
+                        new { Title = "Women's Health Checkups", Desc = "Routine and preventive health screenings tailored for women at every stage of life.", Bg = "#FDF4FF", Accent = "#9333EA" },
+                        // new { Title = "Family Planning", Desc = "Professional counseling and support for informed family planning decisions.", Bg = "#F0FDFA", Accent = "#0D9488" },
+                        new { Title = "Prenatal Care", Desc = "Early pregnancy monitoring, nutrition guidance, and preparation for childbirth.", Bg = "#FFF7ED", Accent = "#F97316" },
+                        new { Title = "Postnatal Care", Desc = "Post-delivery care for mother and baby including recovery support and breastfeeding help.", Bg = "#EFF6FF", Accent = "#0EA5E9" },
+                        // new { Title = "Preventive Health Care", Desc = "Proactive health screenings and wellness programs to prevent disease and promote longevity.", Bg = "#F0FDF4", Accent = "#22C55E" }
+                    };
+                }
+                @foreach (var svc in services)
+                {
+                    <div class="service-card reveal" style="background:@svc.Bg">
+                        <div class="service-card-icon" style="background:@(svc.Accent)20">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="@svc.Accent" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>@svc.Title</h3>
+                        <p>@svc.Desc</p>
+                        <div class="service-card-line" style="background:linear-gradient(90deg,@svc.Accent,transparent)"></div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY CHOOSE US ===== -->
+    <section class="why-section" id="why-choose-us">
+        <div class="why-bg-text"><span>WHY US</span></div>
+        <div class="container" style="position:relative;z-index:1">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+                    <span>Why Choose Vinayak Hospital</span>
+                </div>
+                <h2 class="section-title reveal">The Vinayak <span class="gradient-text">Difference</span></h2>
+                <p class="section-subtitle reveal">We go beyond treating illness — we build lasting relationships built on trust, expertise, and genuine care.</p>
+            </div>
+
+            <div class="why-grid">
+                @{
+                    var whyItems = new[] {
+                        // new { Title = "Experienced Specialists", Desc = "Board-certified doctors with 10+ years of specialized expertise in pediatrics and gynecology.", Color = "#0EA5E9" },
+                        new { Title = "Modern Equipment", Desc = "Advanced diagnostic and treatment technology ensuring accurate diagnoses and effective care.", Color = "#6366F1" },
+                        // new { Title = "Patient-Centered Care", Desc = "Your comfort and wellbeing are at the heart of every decision we make in your treatment.", Color = "#E11D48" },
+                        // new { Title = "Safe Environment", Desc = "Sterile, sanitized facilities with strict protocols ensuring a completely safe healthcare environment.", Color = "#16A34A" },
+                        new { Title = "Affordable Treatment", Desc = "Transparent pricing and flexible payment options making quality healthcare accessible to all.", Color = "#D97706" },
+                        new { Title = "Emergency Support", Desc = "Round-the-clock emergency care with rapid response times when your family needs it most.", Color = "#DC2626" },
+                        new { Title = "Trusted Healthcare", Desc = "Over 5000 satisfied patients trust Vinayak Hospital for their most important health decisions.", Color = "#7C3AED" },
+                        // new { Title = "Personalized Care", Desc = "Customized treatment plans tailored to each patient's unique health needs and lifestyle.", Color = "#0891B2" }
+                    };
+                }
+                @foreach (var item in whyItems)
+                {
+                    <div class="why-card reveal" style="position:relative">
+                        <div class="why-card-icon" style="background:@(item.Color)15">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="@item.Color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>@item.Title</h3>
+                        <p>@item.Desc</p>
+                        <div class="why-card-bottom-line" style="background:linear-gradient(90deg,@item.Color,transparent)"></div>
+                    </div>
+                }
+            </div>
+
+    </section>
+    @*         <!-- CTA Banner -->
+            <div class="cta-banner reveal">
+                <h3>Ready to Experience Premium Healthcare?</h3>
+                <p>Book your appointment today and take the first step towards better health for you and your family.</p>
+                <div class="cta-btn-group">
+                    <a href="#appointment" class="btn-white">Book Appointment</a>
+                    <a href="tel:+919999999999" class="btn-call-emergency">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.31 19.79 19.79 0 0 1 1.61 2.18 2 2 0 0 1 3.59 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Call Emergency
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- ===== GALLERY ===== -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <span>Hospital Gallery</span>
+                </div>
+                <h2 class="section-title reveal">Inside <span class="gradient-text">Vinayak Hospital</span></h2>
+                <p class="section-subtitle reveal">A glimpse into our modern facilities, compassionate care, and world-class medical environment.</p>
+            </div>
+
+            <div class="gallery-grid">
+                @{
+                    var galleryItems = new[] {
+                        new { Src = "https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=600", Alt = "Modern hospital reception", Category = "Facility", Span = "span-2-2" },
+                        new { Src = "https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg?auto=compress&cs=tinysrgb&w=600", Alt = "Doctor consultation", Category = "Consultation", Span = "" },
+                        new { Src = "https://images.pexels.com/photos/3259629/pexels-photo-3259629.jpeg?auto=compress&cs=tinysrgb&w=600", Alt = "Pediatric care", Category = "Pediatric", Span = "" },
+                        new { Src = "https://images.pexels.com/photos/2324837/pexels-photo-2324837.jpeg?auto=compress&cs=tinysrgb&w=600", Alt = "Medical equipment", Category = "Equipment", Span = "" },
+                        new { Src = "https://images.pexels.com/photos/247786/pexels-photo-247786.jpeg?auto=compress&cs=tinysrgb&w=600", Alt = "Hospital ward", Category = "Ward", Span = "" },
+                        new { Src = "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=600", Alt = "Mother and baby care", Category = "Maternity", Span = "span-2" },
+                        new { Src = "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=600", Alt = "Medical lab", Category = "Laboratory", Span = "" },
+                        new { Src = "https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=600", Alt = "Hospital corridor", Category = "Facility", Span = "" }
+                    };
+                }
+                @foreach (var img in galleryItems)
+                {
+                    <div class="gallery-item @img.Span reveal" data-category="@img.Category">
+                        <img src="@img.Src" alt="@img.Alt" loading="lazy" />
+                        <div class="gallery-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                        </div>
+                        <div class="gallery-category">@img.Category</div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-inner">
+                <img id="lightbox-img" src="" alt="" />
+                <button id="lightbox-close" class="lightbox-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                <div id="lightbox-caption" class="lightbox-caption"></div>
+            </div>
+        </div>
+    </section> *@
+
+    @* <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials-section" id="testimonials">
+        <div style="position:absolute;inset:0;pointer-events:none">
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(14,165,233,0.04) 0%,transparent 100%)"></div>
+        </div>
+        <div class="container" style="position:relative;z-index:1">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <span>Patient Testimonials</span>
+                </div>
+                <h2 class="section-title reveal">Trusted by <span class="gradient-text">Thousands of Families</span></h2>
+                <p class="section-subtitle reveal">Real stories from real patients who experienced the Vinayak difference.</p>
+            </div>
+
+            <div style="max-width:896px;margin:0 auto" class="reveal">
+                <div id="testimonial-card" class="testimonial-card"></div>
+                <div class="testimonial-nav">
+                    <div id="testimonial-dots" class="testimonial-dots"></div>
+                    <div class="testimonial-arrows">
+                        <button id="testimonial-prev" class="testimonial-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+                        <button id="testimonial-next" class="testimonial-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                    </div>
+                </div>
+                 <div id="testimonial-mini" class="testimonial-mini-grid"></div> 
+            </div>
+       </div>
+    </section>  *@
+
+    @* <section class="review-section py-5">
+        <div class="container">
+
+            <h2 class="text-center mb-4">Leave Your Review</h2>
+
+            @if (TempData["ReviewSuccess"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["ReviewSuccess"]
+                </div>
+            }
+
+            <form asp-action="AddReview" method="post">
+
+                @Html.AntiForgeryToken()
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label>Full Name</label>
+                        <input type="text"
+                               name="FullName"
+                               class="form-control"
+                               required />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>City</label>
+                        <input type="text"
+                               name="City"
+                               class="form-control" />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label>Rating</label>
+                        <select name="Rating"
+                                class="form-control"
+                                required>
+
+                            <option value="">Select Rating</option>
+                            <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                            <option value="4">⭐⭐⭐⭐ Very Good</option>
+                            <option value="3">⭐⭐⭐ Good</option>
+                            <option value="2">⭐⭐ Average</option>
+                            <option value="1">⭐ Poor</option>
+
+                        </select>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <label>Review</label>
+
+                        <textarea name="ReviewMessage"
+                                  rows="5"
+                                  class="form-control"
+                                  required></textarea>
+                    </div>
+
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    Submit Review
+                </button>
+
+            </form>
+
+        </div>
+    </section> *@
+
+
+    @* <section class="review-wrapper">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-badge">
+                    <span>Patient Reviews</span>
+                </div>
+                <h2 class="section-title">
+                    Trusted By <span class="gradient-text">Thousands Of Families</span>
+                </h2>
+                <p class="section-subtitle">
+                    Share your experience with Vinayak Children & Maternity Hospital.
+                </p>
+            </div>
+            <div class="row g-5 align-items-start">
+                <!-- LEFT - SLIDER -->
+                <div class="col-lg-6">
+                    <div class="review-display-card">
+                        <h3>
+                            What Patients Say
+                            <small>(@Model.Count Reviews)</small>
+                        </h3>
+
+                        @if (Model.Any())
+                        {
+                            <div class="testimonial-slider" id="testimonialSlider">
+                                @foreach (var review in Model)
+                                {
+                                    <div class="testimonial-item @(review == Model.First() ? "active" : "")">
+                                        <div class="quote-icon">
+                                            <i class="fas fa-quote-right"></i>
+                                        </div>
+                                        <div class="review-header">
+                                            <div class="review-avatar">
+                                                @review.FullName.Substring(0, 1).ToUpper()
+                                            </div>
+                                            <div class="review-info">
+                                                <h5>@review.FullName</h5>
+                                                @if (!string.IsNullOrWhiteSpace(review.City))
+                                                {
+                                                    <span>@review.City</span>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div class="stars" aria-label="@review.Rating out of 5 stars">
+                                            @for (int i = 0; i < review.Rating; i++)
+                                            {
+                                                <i class="fas fa-star"></i>
+                                            }
+                                        </div>
+                                        <p class="review-text">
+                                            "@review.ReviewMessage"
+                                        </p>
+                                        <div class="review-date">
+                                            @review.CreatedAt.ToString("dd MMM yyyy")
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+
+                            <!-- Arrow Buttons -->
+                            <button class="slider-arrow slider-prev" id="prevBtn" aria-label="Previous Review">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="slider-arrow slider-next" id="nextBtn" aria-label="Next Review">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+
+                            <div class="testimonial-dots"></div>
+                        }
+                        else
+                        {
+                            <div class="empty-review">
+                                No reviews available yet.
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- RIGHT - FORM -->
+                <div class="col-lg-6">
+                    <div class="review-form-card">
+                        <h3>Leave Your Review</h3>
+                        @if (TempData["ReviewSuccess"] != null)
+                        {
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                @TempData["ReviewSuccess"]
+                                <button type="button" class="btn-close"
+                                        data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        }
+                        <form asp-action="AddReview" method="post">
+                            @Html.AntiForgeryToken()
+                            <input class="form-control"
+                                   name="FullName"
+                                   placeholder="Full Name"
+                                   aria-label="Full Name"
+                                   required />
+                            <input class="form-control"
+                                   name="City"
+                                   placeholder="City"
+                                   aria-label="City" />
+                            <select class="form-select"
+                                    name="Rating"
+                                    aria-label="Rating"
+                                    required>
+                                <option value="">Select Rating</option>
+                                <option value="5">★★★★★ Excellent</option>
+                                <option value="4">★★★★☆ Very Good</option>
+                                <option value="3">★★★☆☆ Good</option>
+                                <option value="2">★★☆☆☆ Fair</option>
+                                <option value="1">★☆☆☆☆ Poor</option>
+                            </select>
+                            <textarea class="form-control"
+                                      rows="5"
+                                      name="ReviewMessage"
+                                      placeholder="Write your review..."
+                                      aria-label="Review Message"
+                                      required></textarea>
+                            <button type="submit" class="btn-review mt-4">
+                                <i class="fas fa-paper-plane me-2"></i>
+                                Submit Review
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> *@
+        
+@*     <!-- ===== APPOINTMENT SECTION ===== -->
+
+    <section class="appointment-section" id="appointment">
+        <div class="container" style="position:relative;z-index:1">
+            <div class="appointment-grid">
+                <!-- Left Info -->
+                <div class="appointment-left reveal-left">
+                    <div class="section-badge" style="background:rgba(14,165,233,0.15);border-color:rgba(14,165,233,0.3)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <span style="color:#7DD3FC">Easy Appointment Booking</span>
+                    </div>
+                    <h2>Book Your<br /><span class="gradient-text">Appointment</span><br />Today</h2>
+                    <p>Schedule your visit with our specialists in just a few steps. We'll confirm your appointment and send reminders before your visit.</p>
+                    @foreach (var feature in new[] {
+                                                "Instant confirmation via SMS & Email",
+                                                "Choose your preferred specialist",
+                                                "Flexible scheduling options",
+                                                "Emergency same-day appointments available"
+                                        })
+                    {
+                        <div class="appointment-feature">
+                            <svg class="appointment-feature-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            <span>@feature</span>
+                        </div>
+                    }
+                    <div class="appointment-contact-pills">
+                        <a href="tel:+919999999999" class="contact-pill contact-pill-phone">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.31 19.79 19.79 0 0 1 1.61 2.18 2 2 0 0 1 3.59 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            +91 99999 99999
+                        </a>
+                        <a href="https://wa.me/919999999999" class="contact-pill contact-pill-wa">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Appointment Form -->
+                <div class="appt-form-wrapper reveal-right">
+                    <div id="form-wrapper">
+                        <h3 class="form-title">Fill in your details</h3>
+                        <form id="appointment-form" method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="Name">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        Full Name
+                                    </label>
+                                    <input type="text" id="Name" name="Name" class="form-input" placeholder="Your full name" autocomplete="name" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="Phone">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.31 19.79 19.79 0 0 1 1.61 2.18 2 2 0 0 1 3.59 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                        Mobile Number
+                                    </label>
+                                    <input type="tel" id="Phone" name="Phone" class="form-input" placeholder="10-digit number" autocomplete="tel" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="Email">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    Email Address
+                                </label>
+                                <input type="email" id="Email" name="Email" class="form-input" placeholder="your@email.com" autocomplete="email" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="Doctor">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                    Select Doctor
+                                </label>
+                                <select id="Doctor" name="Doctor" class="form-input" style="cursor:pointer">
+                                    <option value="">Choose a specialist</option>
+                                    <option value="pediatrician">Dr. Pediatrician – Child Specialist</option>
+                                    <option value="gynecologist">Dr. Gynecologist – Women's Health Specialist</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="Date">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    Appointment Date
+                                </label>
+                                <input type="date" id="Date" name="Date" class="form-input" min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="Message">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                    Message (Optional)
+                                </label>
+                                <textarea id="Message" name="Message" class="form-input" rows="3" placeholder="Describe your health concerns..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                Book Appointment
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ *@
+    <!-- ===== CONTACT ===== -->
+    @* <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Contact Us</span>
+                </div>
+                <h2 class="section-title reveal">Get In <span class="gradient-text">Touch With Us</span></h2>
+                <p class="section-subtitle reveal">We're here to answer your questions and help you access the care you need.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Map -->
+                <div class="contact-map reveal-left">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.06889754725782!3d28.52758200617607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1717430000000!5m2!1sen!2sin"
+                            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="Vinayak Hospital Location">
+                    </iframe>
+                    <div class="map-badge">
+                        <div class="map-badge-name">Vinayak Hospital</div>
+                        <div class="map-badge-sub">New Delhi, India</div>
+                    </div>
+                </div>
+
+                <!-- Contact Cards -->
+                <div>
+                    <div class="contact-cards">
+                        <a href="#" class="contact-card reveal" style="background:#EFF6FF">
+                            <div class="contact-card-icon" style="background:rgba(14,165,233,0.2)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <h3>Hospital Address</h3>
+                            <p>123 Medical Complex, Health Nagar</p>
+                            <p>New Delhi – 110001, India</p>
+                        </a>
+                        <a href="tel:+919999999999" class="contact-card reveal" style="background:#F0FDF4">
+                            <div class="contact-card-icon" style="background:rgba(22,163,74,0.2)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.31 19.79 19.79 0 0 1 1.61 2.18 2 2 0 0 1 3.59 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
+                            <h3>Phone Numbers</h3>
+                            <p>+91 99999 99999 (General)</p>
+                            <p>+91 88888 88888 (Emergency)</p>
+                        </a>
+                        <a href="mailto:info@vinayakhospital.com" class="contact-card reveal" style="background:#FFF1F2">
+                            <div class="contact-card-icon" style="background:rgba(225,29,72,0.2)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <h3>Email Address</h3>
+                            <p>info@vinayakhospital.com</p>
+                            <p>appointments@vinayakhospital.com</p>
+                        </a>
+                        <div class="contact-card reveal" style="background:#FFF7ED;cursor:default">
+                            <div class="contact-card-icon" style="background:rgba(217,119,6,0.2)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            </div>
+                            <h3>Working Hours</h3>
+                            <p>Mon – Sat: 8:00 AM – 8:00 PM</p>
+                            <p>Emergency: 24 Hours / 7 Days</p>
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/919999999999" class="contact-wa reveal">
+                            <div class="contact-wa-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
+                            <div>
+                                <h3>WhatsApp Us</h3>
+                                <p>Send us a message for quick assistance. Available Monday–Saturday, 8 AM – 8 PM.</p>
+                            </div>
+                            <div class="contact-wa-cta">Chat Now →</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> *@
+
+    <!-- ===== FOOTER ===== -->
+@*     <footer>
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block">
+                <path d="M0 0L60 10C120 20 240 40 360 45C480 50 600 40 720 33C840 26 960 22 1080 26C1200 30 1320 42 1380 48L1440 54V0H0Z" fill="#F0F9FF" />
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div>
+                    <div class="footer-brand-logo">
+<div class="nav-logo-icon">
+    <img src="~/images/logo (2).png"
+         alt="Vinayak Hospital Logo"
+         style="width:50px;height:50px;object-fit:contain;">
+</div>
+                        <div>
+                            <div class="footer-brand-name">Vinayak</div>
+                            <div class="footer-brand-sub">Hospital</div>
+                        </div>
+                    </div>
+                    <p class="footer-brand-desc">Providing trusted pediatric and gynecological healthcare with compassion, expertise, and modern medical care since 2014.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social" aria-label="Facebook" style="color:#1877F2">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+                        </a>
+                        <a href="#" class="footer-social" aria-label="Instagram" style="color:#E4405F">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
+                        </a>
+                        <a href="#" class="footer-social" aria-label="YouTube" style="color:#FF0000">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                       <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-controller="Home" asp-action="Doctors">Doctors</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Services</a></li>
+                        <li><a asp-controller="Home" asp-action="Gallery">Gallery</a></li>
+                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a href="#appointment">Book Appointment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a asp-controller="Home" asp-action="Services">Child Vaccination</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Newborn Care</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Pediatric Consultation</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Pregnancy Care</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Women's Health</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Family Planning</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Prenatal Care</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Postnatal Care</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <p>123 Medical Complex, Health Nagar,<br />New Delhi – 110001, India</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.31 19.79 19.79 0 0 1 1.61 2.18 2 2 0 0 1 3.59 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <a href="tel:+919999999999">+91 99999 99999</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <a href="mailto:info@vinayakhospital.com">info@vinayakhospital.com</a>
+                    </div>
+                    <div class="footer-emergency">
+                        <div class="footer-emergency-label">
+                            <span class="footer-emergency-dot"></span>
+                            <span class="footer-emergency-text">Emergency</span>
+                        </div>
+                        <a href="tel:+919999999999">+91 88888 88888</a>
+                        <p class="footer-emergency-sub">Available 24/7</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-bottom-copy">
+                    &copy; @DateTime.Now.Year Vinayak Hospital. All rights reserved. Built with
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#EF4444" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    for better healthcare.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING BUTTONS ===== -->
+    <div class="floating-btns">
+        <button class="float-scroll-top" aria-label="Scroll to top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </button>
+        <div class="float-expanded">
+            <div class="float-expanded-btns">
+                <a href="https://wa.me/919999999999" class="float-action-btn float-wa" aria-label="WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    WhatsApp
+                </a>
+                <a href="tel:+919999999999" class="float-action-btn float-call" aria-label="Call us">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.31 19.79 19.79 0 0 1 1.61 2.18 2 2 0 0 1 3.59 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Call Now
+                </a>
+            </div>
+            <button class="float-fab" aria-label="Contact options">
+                <span class="float-fab-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.31 19.79 19.79 0 0 1 1.61 2.18 2 2 0 0 1 3.59 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </span>
+            </button>
+        </div>
+    </div> *@
+    
+@* </div><!-- end main-content --> *@
+

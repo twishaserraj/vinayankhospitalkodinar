@@ -1,0 +1,43 @@
+﻿<section class="services-section" id="services">
+    <div style="position:absolute;inset:0;pointer-events:none">
+        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;height:384px;background:radial-gradient(ellipse at center,rgba(14,165,233,0.04) 0%,transparent 70%)"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:1">
+        <div class="section-header" style="padding-top:54px;">
+            @* <div class="section-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>Our Medical Services</span>
+            </div> *@
+            <h2 class="section-title reveal">Comprehensive <span class="gradient-text">Healthcare Services</span></h2>
+            <p class="section-subtitle reveal">A complete range of specialized medical services designed to meet every health need of women and children.</p>
+        </div>
+
+        <div class="services-grid">
+            @{
+                var services = new[] {
+                        new { Title = "Child Vaccination", Desc = "Complete immunization schedules for all age groups to protect against preventable diseases.", Bg = "#EFF6FF", Accent = "#2563EB" },
+                        new { Title = "Newborn Care", Desc = "Specialized care for newborns including health assessments, feeding support, and early development.", Bg = "#F0FDF4", Accent = "#16A34A" },
+                        new { Title = "Pediatric Consultation", Desc = "Expert consultation for childhood illnesses, infections, and general health concerns.", Bg = "#FFF7ED", Accent = "#EA580C" },
+                        new { Title = "Child Nutrition", Desc = "Personalized nutritional guidance to ensure optimal growth and healthy development.", Bg = "#FEFCE8", Accent = "#CA8A04" },
+                        new { Title = "Pregnancy Care", Desc = "Comprehensive antenatal and obstetric care throughout your pregnancy journey.", Bg = "#FFF1F2", Accent = "#E11D48" },
+                        new { Title = "Women's Health Checkups", Desc = "Routine and preventive health screenings tailored for women at every stage of life.", Bg = "#FDF4FF", Accent = "#9333EA" },
+                        new { Title = "Family Planning", Desc = "Professional counseling and support for informed family planning decisions.", Bg = "#F0FDFA", Accent = "#0D9488" },
+                        new { Title = "Prenatal Care", Desc = "Early pregnancy monitoring, nutrition guidance, and preparation for childbirth.", Bg = "#FFF7ED", Accent = "#F97316" },
+                        new { Title = "Postnatal Care", Desc = "Post-delivery care for mother and baby including recovery support and breastfeeding help.", Bg = "#EFF6FF", Accent = "#0EA5E9" },
+                        new { Title = "Preventive Health Care", Desc = "Proactive health screenings and wellness programs to prevent disease and promote longevity.", Bg = "#F0FDF4", Accent = "#22C55E" }
+                        };
+            }
+            @foreach (var svc in services)
+            {
+                <div class="service-card reveal" style="background:@svc.Bg">
+                    <div class="service-card-icon" style="background:@(svc.Accent)20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="@svc.Accent" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>@svc.Title</h3>
+                    <p>@svc.Desc</p>
+                    <div class="service-card-line" style="background:linear-gradient(90deg,@svc.Accent,transparent)"></div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
