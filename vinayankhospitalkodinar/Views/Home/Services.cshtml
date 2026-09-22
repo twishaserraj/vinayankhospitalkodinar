@@ -1,43 +1,109 @@
-﻿<section class="services-section" id="services">
-    <div style="position:absolute;inset:0;pointer-events:none">
-        <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;height:384px;background:radial-gradient(ellipse at center,rgba(14,165,233,0.04) 0%,transparent 70%)"></div>
-    </div>
-    <div class="container" style="position:relative;z-index:1">
-        <div class="section-header" style="padding-top:54px;">
-            @* <div class="section-badge">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+﻿<section class="services-section premium-services" id="services">
+
+    <div class="container services-wrapper">
+
+        <div class="section-header">
+            <div class="section-badge reveal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2.5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
                 <span>Our Medical Services</span>
-            </div> *@
-            <h2 class="section-title reveal">Comprehensive <span class="gradient-text">Healthcare Services</span></h2>
-            <p class="section-subtitle reveal">A complete range of specialized medical services designed to meet every health need of women and children.</p>
+            </div>
+
+            <h2 class="section-title reveal">
+                World-Class <span class="gradient-text">Care for Mothers &amp; Children</span>
+            </h2>
+
+            <p class="section-subtitle reveal">
+                Premium healthcare services with compassion, expertise, and cutting-edge medical support.
+            </p>
         </div>
 
-        <div class="services-grid">
+        <div class="services-bento">
             @{
-                var services = new[] {
-                        new { Title = "Child Vaccination", Desc = "Complete immunization schedules for all age groups to protect against preventable diseases.", Bg = "#EFF6FF", Accent = "#2563EB" },
-                        new { Title = "Newborn Care", Desc = "Specialized care for newborns including health assessments, feeding support, and early development.", Bg = "#F0FDF4", Accent = "#16A34A" },
-                        new { Title = "Pediatric Consultation", Desc = "Expert consultation for childhood illnesses, infections, and general health concerns.", Bg = "#FFF7ED", Accent = "#EA580C" },
-                        new { Title = "Child Nutrition", Desc = "Personalized nutritional guidance to ensure optimal growth and healthy development.", Bg = "#FEFCE8", Accent = "#CA8A04" },
-                        new { Title = "Pregnancy Care", Desc = "Comprehensive antenatal and obstetric care throughout your pregnancy journey.", Bg = "#FFF1F2", Accent = "#E11D48" },
-                        new { Title = "Women's Health Checkups", Desc = "Routine and preventive health screenings tailored for women at every stage of life.", Bg = "#FDF4FF", Accent = "#9333EA" },
-                        new { Title = "Family Planning", Desc = "Professional counseling and support for informed family planning decisions.", Bg = "#F0FDFA", Accent = "#0D9488" },
-                        new { Title = "Prenatal Care", Desc = "Early pregnancy monitoring, nutrition guidance, and preparation for childbirth.", Bg = "#FFF7ED", Accent = "#F97316" },
-                        new { Title = "Postnatal Care", Desc = "Post-delivery care for mother and baby including recovery support and breastfeeding help.", Bg = "#EFF6FF", Accent = "#0EA5E9" },
-                        new { Title = "Preventive Health Care", Desc = "Proactive health screenings and wellness programs to prevent disease and promote longevity.", Bg = "#F0FDF4", Accent = "#22C55E" }
-                        };
+                var services = new[]
+                {
+                    new {
+                        Number = "01",
+                        Title = "Child Vaccination",
+                        Desc = "Complete immunization schedules for all age groups to protect against preventable diseases.",
+                        Accent = "#0EA5E9",
+                        Icon = "/images/vaccination.png",
+                        BgImage = "https://images.pexels.com/photos/7653329/pexels-photo-7653329.jpeg"   // transparent PNG
+                    },
+                    new {
+                        Number = "02",
+                        Title = "Newborn Care",
+                        Desc = "Specialized care for newborns including health assessments, feeding support and early development.",
+                        Accent = "#10B981",
+                        Icon = "/images/mother-and-baby.gif",
+                        BgImage = "https://images.pexels.com/photos/7282608/pexels-photo-7282608.jpeg"       // transparent PNG
+                    },
+                    new {
+                        Number = "03",
+                        Title = "Women's Health Checkups",
+                        Desc = "Routine and preventive health screenings tailored for women at every stage of life.",
+                        Accent = "#8B5CF6",
+                        Icon = "/images/requirements.gif",
+                        BgImage = "https://images.pexels.com/photos/5215008/pexels-photo-5215008.jpeg"      // transparent PNG
+                    },
+                    new {
+                        Number = "04",
+                        Title = "Prenatal Care",
+                        Desc = "Early pregnancy monitoring, nutrition guidance and preparation for childbirth.",
+                        Accent = "#F97316",
+                        Icon = "/images/pregnant-woman.gif",
+                        BgImage = "https://images.pexels.com/photos/7108420/pexels-photo-7108420.jpeg"      // transparent PNG
+                    }
+                };
             }
+
             @foreach (var svc in services)
             {
-                <div class="service-card reveal" style="background:@svc.Bg">
-                    <div class="service-card-icon" style="background:@(svc.Accent)20">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="@svc.Accent" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <div class="service-card reveal" style="--accent: @svc.Accent; background-image: url('@svc.BgImage'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+                    <!-- FULL IMAGE / ICON LAYER (visible by default) -->
+                    <div class="card-image-layer">
+                        <div class="icon-bg">
+                            <img src="@svc.Icon" alt="@svc.Title">
+                        </div>
+                        <span class="service-number">@svc.Number</span>
                     </div>
-                    <h3>@svc.Title</h3>
-                    <p>@svc.Desc</p>
-                    <div class="service-card-line" style="background:linear-gradient(90deg,@svc.Accent,transparent)"></div>
+
+                    <!-- CONTENT LAYER (slides in from RIGHT on hover) -->
+                    <div class="card-content-layer">
+                        <div class="content-inner">
+                            <h3>@svc.Title</h3>
+                            <p>@svc.Desc</p>
+                            <a href="#" class="service-btn">
+                                <span>Learn More</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             }
         </div>
     </div>
 </section>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const reveals = document.querySelectorAll('.premium-services .reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        reveals.forEach(el => observer.observe(el));
+    });
+</script>

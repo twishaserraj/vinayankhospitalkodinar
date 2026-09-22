@@ -6,41 +6,41 @@
 
 
 <!-- Loading Screen -->
-@* <div id="loading-screen"> *@
-    @* <div class="loading-particles">
+@* <div id="loading-screen"> 
+    <div class="loading-particles">
         <span style="width:6px;height:6px;left:10%;top:20%;animation-duration:3s;animation-delay:0s"></span>
         <span style="width:4px;height:4px;left:25%;top:60%;animation-duration:4s;animation-delay:0.5s"></span>
         <span style="width:5px;height:5px;left:75%;top:30%;animation-duration:3.5s;animation-delay:1s"></span>
         <span style="width:3px;height:3px;left:85%;top:70%;animation-duration:5s;animation-delay:0.2s"></span>
         <span style="width:6px;height:6px;left:50%;top:80%;animation-duration:4.5s;animation-delay:0.8s"></span>
         <span style="width:4px;height:4px;left:40%;top:15%;animation-duration:3s;animation-delay:1.2s"></span>
-    </div> *@
-    @* <div class="loading-logo-icon">
+    </div> 
+     <div class="loading-logo-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z" />
         </svg>
-    </div> *@
+    </div> 
     
       
      <!-- Splash Page -->
 
-@*     <div class="loading-logo-icon">
+   <div class="loading-logo-icon">
     <img src="~/images/logo.png"
          alt="Vinayak Hospital Logo"
          style=" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"; stroke-linecap="round"; stroke-linejoin="round";">
-</div> *@
-    @* <div style="text-align:center">
+</div> 
+    <div style="text-align:center">
         <h1 style="font-size:36px;font-weight:700;color:white;letter-spacing:0.15em;margin-bottom:4px">Vinayak Children & Maternity</h1>
         <p style="color:#0EA5E9;font-size:13px;letter-spacing:0.4em;">Hospital</p>
-    </div> *@
-    @* <div class="loading-progress-bar">
+    </div> 
+     <div class="loading-progress-bar">
         <div class="loading-progress-fill"></div>
-    </div> *@
-    @* <p id="loading-pct" style="color:#475569;font-size:12px;letter-spacing:0.15em;margin-top:12px">0%</p> *@
-@* </div> *@
+    </div> 
+     <p id="loading-pct" style="color:#475569;font-size:12px;letter-spacing:0.15em;margin-top:12px">0%</p> 
+ </div> 
 
 <!-- Scroll Progress Bar -->
-@* <div class="scroll-progress-bar"></div> *@
+ <div class="scroll-progress-bar"></div> *@
 
 
 <!-- Main Content (hidden until loading done) -->
@@ -94,96 +94,159 @@
     </nav> *@
 
     <!-- ===== HERO SECTION ===== -->
-    <section class="hero-section" id="hero">
-        <!-- Floating decorative orbs -->
-        <div class="hero-canvas">
-            <div class="hero-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(14,165,233,0.12) 0%,transparent 70%);left:30%;top:10%;animation:float 7s ease-in-out infinite"></div>
-            <div class="hero-orb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(220,252,231,0.6) 0%,transparent 70%);right:5%;bottom:15%"></div>
-            <!-- Floating particles -->
-            @for (int i = 0; i < 12; i++)
-            {
-                var size = (i % 3 + 1) * 4;
-                var left = (i * 8 + 5) % 90;
-                var top = (i * 7 + 10) % 80;
-                var delay = i * 0.3;
-                <div style="position:absolute;width:@(size)px;height:@(size)px;border-radius:50%;background:rgba(14,165,233,0.2);left:@(left)%;top:@(top)%;animation:particle-float @(3 + i % 3)s ease-in-out infinite;animation-delay:@(delay)s"></div>
-            }
-        </div>
+<section class="hero-section" id="hero">
+    <!-- Floating decorative orbs -->
+    <div class="hero-canvas">
+        <div class="hero-orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(14,165,233,0.12) 0%,transparent 70%);left:30%;top:10%;animation:float 7s ease-in-out infinite"></div>
+        <div class="hero-orb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(220,252,231,0.6) 0%,transparent 70%);right:5%;bottom:15%"></div>
+        <!-- Floating particles -->
+        @for (int i = 0; i < 12; i++)
+        {
+            var size = (i % 3 + 1) * 4;
+            var left = (i * 8 + 5) % 90;
+            var top = (i * 7 + 10) % 80;
+            var delay = i * 0.3;
+            <div style="position:absolute;width:@(size)px;height:@(size)px;border-radius:50%;background:rgba(14,165,233,0.2);left:@(left)%;top:@(top)%;animation:particle-float @(3 + i % 3)s ease-in-out infinite;animation-delay:@(delay)s"></div>
+        }
+    </div>
 
-        <!-- Trust badges (desktop) -->
-        <div class="trust-badges-floating" style="position:absolute;inset:0;pointer-events:none">
-            <div class="trust-badge-item" style="right:28%;top:15%;animation-delay:1.2s">
-                <div class="trust-badge-icon" style="background:#DCFCE7">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <span class="trust-badge-text">ISO Certified</span>
+    <!-- Trust badges (desktop) -->
+    <div class="trust-badges-floating" style="position:absolute;inset:0;pointer-events:none">
+        <div class="trust-badge-item" style="right:28%;top:15%;animation-delay:1.2s">
+            <div class="trust-badge-icon" style="background:#DCFCE7">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
             </div>
-            <div class="trust-badge-item" style="right:2%;top:74%;animation-delay:1.5s">
-                <div class="trust-badge-icon" style="background:#FEF3C7">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                </div>
-                <span class="trust-badge-text">24/7 Emergency</span>
+            <span class="trust-badge-text">ISO Certified</span>
+        </div>
+        <div class="trust-badge-item" style="right:2%;top:74%;animation-delay:1.5s">
+            <div class="trust-badge-icon" style="background:#FEF3C7">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             </div>
-             @* <div class="trust-badge-item" style="left:5%;top:70%;animation-delay:1.8s">
-                <div class="trust-badge-icon" style="background:#FCE7F3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#DB2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+            <span class="trust-badge-text">24/7 Emergency</span>
+        </div>
+        <div class="trust-badge-item" style="right:28%;top:75%;animation-delay:2.1s">
+            <div class="trust-badge-icon" style="background:#EFF6FF">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <span class="trust-badge-text">98% Satisfaction</span>
+        </div>
+    </div>
+
+    <!-- Main Hero Content -->
+    @* <div class="hero-content">
+        <div class="hero-grid">
+            <!-- Left Content -->
+            <div>
+                <div class="trust-badge-pill">
+                    <span class="badge-dot"></span>
+                    <span style="color:#0369A1;font-size:14px;font-weight:500">Trusted Healthcare Since 2014</span>
                 </div>
-                <span class="trust-badge-text">10+ Years</span>
-            </div>  *@
-            <div class="trust-badge-item" style="right:28%;top:75%;animation-delay:2.1s">
-                <div class="trust-badge-icon" style="background:#EFF6FF">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <h1 class="hero-h1">
+                    <span style="color:#0F172A">VINAYAK</span><br />
+                    <span class="gradient-text">HOSPITAL</span>
+                </h1>
+                <h2 class="hero-h2">
+                    Comprehensive Care for
+                    <span style="color:#0EA5E9"> Women and Children</span>
+                </h2>
+                <p class="hero-p">
+                    Providing trusted pediatric and gynecological healthcare with compassion, expertise,
+                    and modern medical care. Your family's health is our highest priority.
+                </p>
+
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-number"><span class="counter" data-end="5000" data-suffix="+" data-duration="2000">5000+</span></div>
+                        <div class="hero-stat-label">Happy Patients</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-number"><span class="counter" data-end="10" data-suffix="+" data-duration="1500">10+</span></div>
+                        <div class="hero-stat-label">Years Experience</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-number"><span class="counter" data-end="98" data-suffix="%" data-duration="1800">98%</span></div>
+                        <div class="hero-stat-label">Satisfaction Rate</div>
+                    </div>
                 </div>
-                <span class="trust-badge-text">98% Satisfaction</span>
+            </div>
+
+            <!-- Right Visual -->
+            <div class="hero-visual">
+                <div class="hero-circle-bg"></div>
+                <div class="hero-circle-spin"></div>
+                <div class="hero-center-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <div>
+                        <div class="hero-center-card-title">Your Health</div>
+                        <div class="hero-center-card-sub">Our Priority</div>
+                    </div>
+                </div>
+                <div class="hero-float-badge glass" style="top:32px;right:-16px;animation:float 4s ease-in-out infinite">
+                    <div class="hero-float-badge-icon" style="background:#DCFCE7">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    </div>
+                    <div>
+                        <div class="hero-float-badge-title">Advanced Care</div>
+                        <div class="hero-float-badge-sub">Healthcare</div>
+                    </div>
+                </div>
+                <div class="hero-float-badge glass" style="bottom:48px;left:-32px;animation:float-reverse 5s ease-in-out infinite">
+                    <div class="hero-float-badge-icon" style="background:#FCE7F3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DB2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </div>
+                    <div>
+                        <div class="hero-float-badge-title">Compassionate</div>
+                        <div class="hero-float-badge-sub">Healthcare</div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div> *@
 
+    <!-- =========================
+         SLIDE 1 (Active) - Text Content
+    ========================= -->
+    <div class="hero-slide active">
         <div class="hero-content">
             <div class="hero-grid">
                 <!-- Left Content -->
                 <div>
                     <div class="trust-badge-pill">
                         <span class="badge-dot"></span>
-                        <span style="color:#0369A1;font-size:14px;font-weight:500">Trusted Healthcare Since 2014</span>
+                        <span style="color:#0369A1;font-size:14px;font-weight:500">
+                            Trusted Healthcare Since 2014
+                        </span>
                     </div>
-
                     <h1 class="hero-h1">
                         <span style="color:#0F172A">VINAYAK</span><br />
                         <span class="gradient-text">HOSPITAL</span>
                     </h1>
-
                     <h2 class="hero-h2">
                         Comprehensive Care for
                         <span style="color:#0EA5E9"> Women and Children</span>
                     </h2>
-
                     <p class="hero-p">
                         Providing trusted pediatric and gynecological healthcare with compassion, expertise,
                         and modern medical care. Your family's health is our highest priority.
                     </p>
 
-                    @* <div class="hero-btns">
-                        <a href="#appointment" class="hero-btn-primary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                            Book Appointment
-                        </a>
-                        <a href="tel:+919999999999" class="hero-btn-secondary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.31 19.79 19.79 0 0 1 1.61 2.18 2 2 0 0 1 3.59 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                            Call Now
-                        </a>
-                    </div> *@
-
                     <div class="hero-stats">
                         <div>
-                            <div class="hero-stat-number"><span class="counter" data-end="5000" data-suffix="+" data-duration="2000">5000+</span></div>
+                            <div class="hero-stat-number">
+                                <span class="counter" data-end="5000" data-suffix="+" data-duration="2000">5000+</span>
+                            </div>
                             <div class="hero-stat-label">Happy Patients</div>
                         </div>
                         <div>
-                            <div class="hero-stat-number"><span class="counter" data-end="10" data-suffix="+" data-duration="1500">10+</span></div>
+                            <div class="hero-stat-number">
+                                <span class="counter" data-end="10" data-suffix="+" data-duration="1500">10+</span>
+                            </div>
                             <div class="hero-stat-label">Years Experience</div>
                         </div>
                         <div>
-                            <div class="hero-stat-number"><span class="counter" data-end="98" data-suffix="%" data-duration="1800">98%</span></div>
+                            <div class="hero-stat-number">
+                                <span class="counter" data-end="98" data-suffix="%" data-duration="1800">98%</span>
+                            </div>
                             <div class="hero-stat-label">Satisfaction Rate</div>
                         </div>
                     </div>
@@ -194,7 +257,9 @@
                     <div class="hero-circle-bg"></div>
                     <div class="hero-circle-spin"></div>
                     <div class="hero-center-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
                         <div>
                             <div class="hero-center-card-title">Your Health</div>
                             <div class="hero-center-card-sub">Our Priority</div>
@@ -202,7 +267,9 @@
                     </div>
                     <div class="hero-float-badge glass" style="top:32px;right:-16px;animation:float 4s ease-in-out infinite">
                         <div class="hero-float-badge-icon" style="background:#DCFCE7">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
                         </div>
                         <div>
                             <div class="hero-float-badge-title">Advanced Care</div>
@@ -211,7 +278,9 @@
                     </div>
                     <div class="hero-float-badge glass" style="bottom:48px;left:-32px;animation:float-reverse 5s ease-in-out infinite">
                         <div class="hero-float-badge-icon" style="background:#FCE7F3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DB2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#DB2777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
                         </div>
                         <div>
                             <div class="hero-float-badge-title">Compassionate</div>
@@ -221,47 +290,288 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Bottom wave -->
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block">
-                <path d="M0 80L48 72C96 64 192 48 288 40C384 32 480 32 576 38.7C672 45.3 768 58.7 864 61.3C960 64 1056 56 1152 50.7C1248 45.3 1344 42.7 1392 41.3L1440 40V80H0Z" fill="#caecfaf5" />
-            </svg>
+    <!-- =========================
+         SLIDE 2 - IMAGE
+    ========================= -->
+    <!-- =========================
+     SLIDE 2 - PEDIATRICIAN
+========================= -->
+    <!-- =========================
+     SLIDE 2 - PEDIATRICIAN
+========================= -->
+    <div class="hero-slide hero-image-slide">
+
+        <div class="hero-image-wrapper">
+
+            <!-- LEFT CONTENT -->
+            <div class="hero-image-content">
+                <div class="hero-glass-content">
+
+                    <div class="trust-badge-pill">
+                        <span class="badge-dot"></span>
+                        <span>Expert Pediatric Care</span>
+                    </div>
+
+                    <h2 class="hero-image-title">
+                        Gentle Care for
+                        <span class="gradient-text">Growing Smiles</span>
+                    </h2>
+
+                    <p class="hero-image-description">
+                        From newborns to adolescents, our experienced pediatricians provide
+                        compassionate care, routine check-ups, vaccinations, nutritional guidance,
+                        and advanced treatment to ensure your child's healthy growth and development.
+                    </p>
+
+                    <div class="hero-btns">
+                        <a href="#" class="hero-btn-primary">Book Appointment</a>
+                        <a href="#" class="hero-btn-secondary">Learn More</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="hero-image-box">
+                <div class="hero-image-circle"></div>
+
+                <img src="https://brooksidefamilyclinic.com.au/wp-content/uploads/2023/09/brooksidefamilyclinic-side.jpg"
+                     alt="Pediatrician at Vinayak Hospital"
+                     class="hero-side-image" />
+            </div>
+
         </div>
-    </section>
 
+    </div>
+
+    <!-- =========================
+     SLIDE 3 - GYNECOLOGIST
+========================= -->
+    <div class="hero-slide hero-image-slide">
+
+        <div class="hero-image-wrapper">
+
+            <!-- LEFT CONTENT -->
+            <div class="hero-image-content">
+                <div class="hero-glass-content">
+
+                    <div class="trust-badge-pill">
+                        <span class="badge-dot"></span>
+                        <span>Expert Gynecological Care</span>
+                    </div>
+
+                    <h2 class="hero-image-title">
+                        Complete Care for
+                        <span class="gradient-text">Every Woman</span>
+                    </h2>
+
+                    <p class="hero-image-description">
+                        Comprehensive gynecology and obstetric services including pregnancy care,
+                        fertility guidance, menstrual health, preventive screenings and personalized treatment delivered with compassion and expertise.
+                    </p>
+
+                    <div class="hero-btns">
+                        <a href="#" class="hero-btn-primary">Book Appointment</a>
+                        <a href="#" class="hero-btn-secondary">Learn More</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="hero-image-box">
+                <div class="hero-image-circle"></div>
+
+                <img src="https://st4.depositphotos.com/10614052/31508/i/450/depositphotos_315089434-stock-photo-male-gynecologist-working-with-woman.jpg"
+                     alt="Gynecologist at Vinayak Hospital"
+                     class="hero-side-image" />
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Slider Dots -->
+  @*   <div class="hero-slider-dots">
+        <button type="button" class="hero-slider-dot active" aria-label="Slide 1"></button>
+        <button type="button" class="hero-slider-dot" aria-label="Slide 2"></button>
+        <button type="button" class="hero-slider-dot" aria-label="Slide 3"></button>
+    </div> *@
+
+    <!-- Bottom wave -->
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block">
+            <path d="M0 80L48 72C96 64 192 48 288 40C384 32 480 32 576 38.7C672 45.3 768 58.7 864 61.3C960 64 1056 56 1152 50.7C1248 45.3 1344 42.7 1392 41.3L1440 40V80H0Z" fill="#caecfaf5" />
+        </svg>
+    </div>
+</section>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const slides = document.querySelectorAll(".hero-slide");
+        const dots = document.querySelectorAll(".hero-slider-dot");
+
+        let current = 0;
+
+        function showSlide(index) {
+
+            slides.forEach((slide, i) => {
+
+                slide.classList.toggle("active", i === index);
+
+            });
+
+            dots.forEach((dot, i) => {
+
+                dot.classList.toggle("active", i === index);
+
+            });
+
+            current = index;
+
+        }
+
+        dots.forEach((dot, index) => {
+
+            dot.addEventListener("click", () => {
+
+                showSlide(index);
+
+            });
+
+        });
+
+        setInterval(() => {
+
+            current++;
+
+            if (current >= slides.length) {
+
+                current = 0;
+
+            }
+
+            showSlide(current);
+
+        }, 5000);
+
+    });
+</script>
     <!-- ===== ABOUT SECTION ===== -->
     <section class="about-section" id="about">
         <div class="container">
-            <div class="section-header">
-                <div class="section-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    <span>About Our Hospital</span>
-                </div>
-                <h2 class="section-title reveal">Dedicated to Your <span class="gradient-text">Health &amp; Wellbeing</span></h2>
-                <p class="section-subtitle reveal">Vinayak Hospital has been a beacon of trusted healthcare for over a decade, providing compassionate, expert care to women and children across the region.</p>
+        <div class="section-header">
+
+            <div class="section-badge">
+               
+                <span>About Vinayak Hospital</span>
             </div>
+
+            <h2 class="section-title reveal">
+                Caring Beyond Treatment,
+                <span class="gradient-text">
+                    Building Healthier Families
+                </span>
+            </h2>
+
+            <p class="section-subtitle reveal">
+                Vinayak Hospital is committed to delivering compassionate,
+                advanced and patient-focused healthcare with modern technology,
+                experienced specialists and a family-centered approach.
+            </p>
+
+        </div>
 
             <!-- Stats -->
             <div class="stats-grid">
-                @{
-                    var stats = new[] {
-                        new { End = 5000, Suffix = "+", Label = "Happy Patients", Sub = "Families served", Bg = "#EFF6FF", IconBg = "#0EA5E9" },
-                        new { End = 10, Suffix = "+", Label = "Years Experience", Sub = "Medical excellence", Bg = "#F0FDF4", IconBg = "#16A34A" },
-                        new { End = 24, Suffix = "/7", Label = "Support", Sub = "Always available", Bg = "#FFF7ED", IconBg = "#EA580C" },
-                        new { End = 98, Suffix = "%", Label = "Satisfaction", Sub = "Patient feedback", Bg = "#FFF1F2", IconBg = "#E11D48" }
-                    };
-                }
+              @{
+    var stats = new[]
+    {
+        new {
+            End = 5000,
+            Suffix = "+",
+            Label = "Happy Patients",
+            Sub = "Families Served",
+            Icon="/images/happy.gif"
+        },
+
+        new {
+            End = 10,
+            Suffix = "+",
+            Label = "Years Experience",
+            Sub = "Trusted Healthcare",
+            Icon="/images/calendar-time.gif"
+        },
+
+        new {
+            End = 24,
+            Suffix = "/7",
+            Label = "Emergency Care",
+            Sub = "Always Available",
+            Icon="/images/ambulance.gif"
+        },
+
+        new {
+            End = 98,
+            Suffix = "%",
+            Label = "Patient Satisfaction",
+            Sub = "Excellent Reviews",
+            Icon="/images/patient.gif"
+        }
+
+    };
+}
                 @foreach (var stat in stats)
                 {
-                    <div class="stat-card reveal" style="background:@stat.Bg">
-                        <div class="stat-icon" style="background:@stat.IconBg">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+                <div class="stat-card reveal">
+
+                    <div class="stat-glow"></div>
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon">
+
+                            <img src="@stat.Icon"
+                                 alt="@stat.Label">
+
                         </div>
-                        <div class="stat-number"><span class="counter" data-end="@stat.End" data-suffix="@stat.Suffix">@stat.End@stat.Suffix</span></div>
-                        <div class="stat-label">@stat.Label</div>
-                        <div class="stat-sub">@stat.Sub</div>
+
+                        <span class="stat-chip">
+
+                            ★ Trusted
+
+                        </span>
+
                     </div>
+
+                    <div class="stat-number">
+
+                        <span class="counter"
+                              data-end="@stat.End"
+                              data-suffix="@stat.Suffix">
+
+                            @stat.End@stat.Suffix
+
+                        </span>
+
+                    </div>
+
+                    <h4 class="stat-label">
+
+                        @stat.Label
+
+                    </h4>
+
+                    <p class="stat-sub">
+
+                        @stat.Sub
+
+                    </p>
+
+                </div>
                 }
             </div>
 
@@ -284,186 +594,324 @@
             </div> *@
 
             <!-- Core Values -->
-            <h3 style="font-size:21px;font-weight:600;color:#0F172A;text-align:center;margin-bottom:4px" class="reveal">Our Core Values</h3>
+        <div class="section-header">
+
+            <div class="section-badge">
+
+              
+
+                <span>
+
+                    Why Choose Us
+
+                </span>
+
+            </div>
+
+            <h3 class="section-title reveal">
+
+                Our Core
+
+                <span class="gradient-text">
+
+                    Values
+
+                </span>
+
+            </h3>
+
+        </div>
+        <div class="about-bottom reveal">
+
+            <div class="about-note">
+
+               
+
+                <span>
+
+                    Trusted by 5000+ Families across Gujarat
+
+                </span>
+
+            </div>
+
+        </div>
             <div class="values-grid">
-                @{
-                    var values = new[] {
-                        new { Title = "Compassionate Care", Desc = "We treat every patient with empathy and personal attention." },
-                        new { Title = "Medical Excellence", Desc = "State-of-the-art equipment with evidence-based medicine." },
-                        new { Title = "Family-Centered", Desc = "We involve families in care decisions for better outcomes." },
-                        new { Title = "Innovation", Desc = "Continually adopting the latest advancements in healthcare." }
-                    };
-                }
+              @{
+    var values = new[]
+    {
+        new {
+            Title="Compassionate Care",
+            Desc="We treat every patient with empathy and personal attention.",
+            Icon="/images/peace-heart.gif",
+            Bg="/images/peace-heart."
+        },
+
+        new {
+            Title="Medical Excellence",
+            Desc="Advanced technology with evidence-based treatment.",
+            Icon="/images/blood-pressure.gif",
+            Bg="/images/blood-pressure."
+        },
+
+        new {
+            Title="Family Centered",
+            Desc="Keeping families involved in every healthcare decision.",
+            Icon="/images/family.gif",
+            Bg="/images/bg/family-bg.png"
+        },
+
+        new {
+            Title="Innovation",
+            Desc="Modern healthcare with continuous improvement.",
+            Icon="/images/microscope.gif",
+            Bg="/images/peace-heart"
+        }
+    };
+}
                 @foreach (var val in values)
                 {
-                    <div class="value-card reveal">
-                        <div class="value-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </div>
-                        <h4>@val.Title</h4>
-                        <p>@val.Desc</p>
-                    </div>
+                <div class="value-card reveal"
+     style="background-image:url('@val.Bg')">
+
+    <div class="value-overlay"></div>
+
+    <div class="value-header">
+
+        <div class="value-icon">
+
+            <img src="@val.Icon">
+
+        </div>
+
+        <span class="value-chip">
+
+            Premium Care
+
+        </span>
+
+    </div>
+
+    <div class="value-body">
+
+        <h4>
+
+            @val.Title
+
+        </h4>
+
+        <p>
+
+            @val.Desc
+
+        </p>
+
+    </div>
+
+</div>
                 }
             </div>
         </div>
     </section>
 
     <!-- ===== DOCTORS SECTION ===== -->
-    <section class="doctors-section" id="doctors">
-        <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden">
-            <div style="position:absolute;top:80px;left:40px;width:288px;height:288px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.08) 0%,transparent 70%)" class="animate-float-reverse"></div>
-            <div style="position:absolute;bottom:80px;right:40px;width:256px;height:256px;border-radius:50%;background:radial-gradient(circle,rgba(236,72,153,0.08) 0%,transparent 70%)" class="animate-float"></div>
+<section class="doctors-section" id="doctors">
+    <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden">
+        <div style="position:absolute;top:80px;left:40px;width:150px;height:288px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.08) 0%,transparent 70%)" class="animate-float-reverse"></div>
+        <div style="position:absolute;bottom:80px;right:40px;width:256px;height:256px;border-radius:50%;background:radial-gradient(circle,rgba(236,72,153,0.08) 0%,transparent 70%)" class="animate-float"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:1">
+        <div class="section-header">
+            <div class="section-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                <span>Our Specialist Doctors</span>
+            </div>
+            <h2 class="section-title reveal">Expert Doctors You Can <span class="gradient-text">Trust</span></h2>
+            <p class="section-subtitle reveal">Our highly qualified specialists bring years of experience and genuine compassion to every patient encounter.</p>
         </div>
-        <div class="container" style="position:relative;z-index:1">
-            <div class="section-header">
-                <div class="section-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                    <span>Our Specialist Doctors</span>
+
+        <div class="doctors-grid">
+
+            <!-- Pediatrician Card -->
+            <div class="doctor-card reveal-left">
+                <!-- Full card image (replace src with your real photo) -->
+                <img src="~/images/viyananksir.jpeg"
+                     alt="Dr Pradhyuman Jadav"
+                     class="doctor-card-img">
+
+                <!-- Soft gradient overlay (always present for depth) -->
+                <div class="doctor-card-overlay" style="background:linear-gradient(to top, rgba(14,165,233,0.85) 0%, rgba(14,165,233,0.35) 40%, transparent 70%)"></div>
+
+                <!-- Content that slides up from bottom -->
+                <div class="doctor-card-content">
+                    <div class="doctor-specialty" style="color:#0EA5E9">PEDIATRICIAN</div>
+                    <div class="doctor-title">
+                        Dr Pradhyuman Jadav
+                        <br><span class="specialist">(Child Specialist)</span>
+                    </div>
+                    <div class="doctor-stars">
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <div class="doctor-star" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)"></div>
+                        }
+                        <span style="color:#64748B;font-size:12px;margin-left:4px">10+ Years</span>
+                    </div>
+                    <p class="doctor-desc">
+                        Dedicated to the health and development of children from newborns through adolescence, providing comprehensive pediatric care with the latest medical expertise.
+                    </p>
+                    <a asp-action="Contact" class="doctor-cta" style="background:linear-gradient(135deg,#0EA5E9,#0284C7);box-shadow:0 10px 30px rgba(14,165,233,0.35)">
+                        View More Info <span>→</span>
+                    </a>
                 </div>
-                <h2 class="section-title reveal">Expert Doctors You Can <span class="gradient-text">Trust</span></h2>
-                <p class="section-subtitle reveal">Our highly qualified specialists bring years of experience and genuine compassion to every patient encounter.</p>
             </div>
 
-            <div class="doctors-grid">
-                <!-- Pediatrician Card -->
-                <div class="doctor-card reveal-left" style="border:1px solid rgba(255,255,255,0.6)">
-                    <div style="position:absolute;inset:0;border-radius:24px;background:#EFF6FF"></div>
-                    <div class="doctor-card-inner" style="position:relative">
-                        <div class="doctor-header">
-                            <div style="display:flex;align-items:center;gap:16px">
-                                <div class="doctor-avatar" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h.01"></path><path d="M15 12h.01"></path><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"></path><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6 9 9 0 0 1 2.3-4L6 5"></path><path d="M6 5a9 9 0 0 1 2.6-2 2 2 0 0 0 3.9 0 9 9 0 0 1 5.5 4.3 2 2 0 0 1 0 3.4 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.4 9 9 0 0 1 5.6-2.3z"></path></svg>
-                                </div>
-                                <div>
-                                    <div class="doctor-specialty" style="color:#0EA5E9">PEDIATRICIAN</div>
-                                    <div class="doctor-title">Dr Pradhyuman D Jadav (Child Specialist)</div>
-                                    <div class="doctor-stars">
-                                        @for (int i = 0; i < 5; i++)
-                                        {
-                                            <div class="doctor-star" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)"></div>
-                                        }
-                                        <span style="color:#64748B;font-size:12px;margin-left:4px">10+ Years</span>
-                                    </div>
-                                </div>
-                            </div>
-                            @* <div class="doctor-badge" style="background:rgba(14,165,233,0.1);color:#0EA5E9">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                                Pediatric Excellence
-                            </div> *@
-                        </div>
-                        <p class="doctor-desc">Dedicated to the health and development of children from newborns through adolescence, providing comprehensive pediatric care with the latest medical expertise.</p>
-                        <div class="services-label">Services Offered</div> 
-                        <div class="doctor-services-grid">
-                            @foreach (var svc in new[] { "Child Nutrition Guidance", "Child Vaccination", "Growth Monitoring", "Newborn Care", "Pediatric Consultation", "Development Assessment" })
-                            {
-                                <div class="service-item">
-                                    
-                                    <div class="service-item-icon" style="background:rgba(14,165,233,0.1)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    </div>
-                                    <span>@svc</span>
-                                </div>
-                            }
-                        </div>
-                        <a asp-action="Contact" class="doctor-cta" style="background:linear-gradient(135deg,#0EA5E9,#0284C7);box-shadow:0 10px 30px rgba(14,165,233,0.3)">
-                            Book Consultation <span>→</span>
-                        </a>
-                    </div>
-                </div>
+            <!-- Gynecologist Card -->
+            <div class="doctor-card reveal-right">
+                <!-- Full card image (replace src with your real photo) -->
+                <img src="~/images/vinayankmrs.jpeg"
+                     alt="Dr Hetal Jadav"
+                     class="doctor-card-img">
 
-                <!-- Gynecologist Card -->
-                <div class="doctor-card reveal-right" style="border:1px solid rgba(255,255,255,0.6)">
-                    <div style="position:absolute;inset:0;border-radius:24px;background:#FFF1F2"></div>
-                    <div class="doctor-card-inner" style="position:relative">
-                        <div class="doctor-header">
-                            <div style="display:flex;align-items:center;gap:16px">
-                                <div class="doctor-avatar" style="background:linear-gradient(135deg,#EC4899,#BE185D)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3c0 1.7 1.3 3 3 3a3 3 0 0 0 3-3c0-1.7-1.3-3-3-3z"></path><path d="M12 8v13"></path><path d="M8 12a4 4 0 0 0 8 0"></path></svg>
-                                </div>
-                                <div>
-                                    <div class="doctor-specialty" style="color:#EC4899">GYNECOLOGIST</div>
-                                    <div class="doctor-title">Dr Hetal P Jadav (Women's Health Specialist)</div>
-                                    <div class="doctor-stars">
-                                        @for (int i = 0; i < 5; i++)
-                                        {
-                                            <div class="doctor-star" style="background:linear-gradient(135deg,#EC4899,#BE185D)"></div>
-                                        }
-                                        <span style="color:#64748B;font-size:12px;margin-left:4px">12+ Years</span>
-                                    </div>
-                                </div>
-                            </div>
-                            @* <div class="doctor-badge" style="background:rgba(236,72,153,0.1);color:#EC4899">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                                Women's Wellness
-                            </div> *@
-                        </div>
-                        <p class="doctor-desc">Comprehensive women's healthcare from adolescence through menopause, offering expert gynecological care and obstetric services with compassion and expertise.</p>
-                        <div class="services-label">Services Offered</div>
-                        <div class="doctor-services-grid">
-                            @foreach (var svc in new[] { "Pregnancy Care", "Women's Health Checkups", "Prenatal Care", "Postnatal Care", "Menstrual Health", "Infertility Consultation" })
-                            {
-                                <div class="service-item">
-                                    <div class="service-item-icon" style="background:rgba(236,72,153,0.1)">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    </div>
-                                    <span>@svc</span>
-                                </div>
-                            }
-                        </div> 
-                        <a asp-action="Contact" class="doctor-cta" style="background:linear-gradient(135deg,#EC4899,#BE185D);box-shadow:0 10px 30px rgba(236,72,153,0.3)">
-                            Book Consultation <span>→</span>
-                        </a>
+                <!-- Soft gradient overlay -->
+                <div class="doctor-card-overlay" style="background:linear-gradient(to top, rgba(236,72,153,0.85) 0%, rgba(236,72,153,0.35) 40%, transparent 70%)"></div>
+
+                <!-- Content that slides up from bottom -->
+                <div class="doctor-card-content">
+                    <div class="doctor-specialty" style="color:#EC4899">GYNECOLOGIST</div>
+                    <div class="doctor-title">
+                        Dr Hetal Jadav
+                        <br><span class="specialist">(Women's Health Specialist)</span>
                     </div>
+                    <div class="doctor-stars">
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <div class="doctor-star" style="background:linear-gradient(135deg,#EC4899,#BE185D)"></div>
+                        }
+                        <span style="color:#64748B;font-size:12px;margin-left:4px">12+ Years</span>
+                    </div>
+                    <p class="doctor-desc">
+                        Comprehensive women's healthcare from adolescence through menopause, offering expert gynecological care and obstetric services with compassion and expertise.
+                    </p>
+                    <a asp-action="Contact" class="doctor-cta" style="background:linear-gradient(135deg,#EC4899,#BE185D);box-shadow:0 10px 30px rgba(236,72,153,0.35)">
+                        View More Info <span>→</span>
+                    </a>
                 </div>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ===== SERVICES SECTION ===== -->
-    <section class="services-section" id="services">
-        <div style="position:absolute;inset:0;pointer-events:none">
-            <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;height:384px;background:radial-gradient(ellipse at center,rgba(14,165,233,0.04) 0%,transparent 70%)"></div>
-        </div>
-        <div class="container" style="position:relative;z-index:1">
-            <div class="section-header">
-                <div class="section-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                    <span>Our Medical Services</span>
-                </div>
-                <h2 class="section-title reveal">Comprehensive <span class="gradient-text">Healthcare Services</span></h2>
-                <p class="section-subtitle reveal">A complete range of specialized medical services designed to meet every health need of women and children.</p>
+<section class="services-section premium-services" id="services">
+
+    <div class="container services-wrapper">
+
+        <div class="section-header">
+            <div class="section-badge reveal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2.5">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Our Medical Services</span>
             </div>
 
-            <div class="services-grid">
-                @{
-                    var services = new[] {
-                        new { Title = "Child Vaccination", Desc = "Complete immunization schedules for all age groups to protect against preventable diseases.", Bg = "#EFF6FF", Accent = "#2563EB" },
-                        new { Title = "Newborn Care", Desc = "Specialized care for newborns including health assessments, feeding support, and early development.", Bg = "#F0FDF4", Accent = "#16A34A" },
-                        // new { Title = "Pediatric Consultation", Desc = "Expert consultation for childhood illnesses, infections, and general health concerns.", Bg = "#FFF7ED", Accent = "#EA580C" },
-                        // new { Title = "Child Nutrition", Desc = "Personalized nutritional guidance to ensure optimal growth and healthy development.", Bg = "#FEFCE8", Accent = "#CA8A04" },
-                        // new { Title = "Pregnancy Care", Desc = "Comprehensive antenatal and obstetric care throughout your pregnancy journey.", Bg = "#FFF1F2", Accent = "#E11D48" },
-                        new { Title = "Women's Health Checkups", Desc = "Routine and preventive health screenings tailored for women at every stage of life.", Bg = "#FDF4FF", Accent = "#9333EA" },
-                        // new { Title = "Family Planning", Desc = "Professional counseling and support for informed family planning decisions.", Bg = "#F0FDFA", Accent = "#0D9488" },
-                        new { Title = "Prenatal Care", Desc = "Early pregnancy monitoring, nutrition guidance, and preparation for childbirth.", Bg = "#FFF7ED", Accent = "#F97316" },
-                        new { Title = "Postnatal Care", Desc = "Post-delivery care for mother and baby including recovery support and breastfeeding help.", Bg = "#EFF6FF", Accent = "#0EA5E9" },
-                        // new { Title = "Preventive Health Care", Desc = "Proactive health screenings and wellness programs to prevent disease and promote longevity.", Bg = "#F0FDF4", Accent = "#22C55E" }
-                    };
-                }
-                @foreach (var svc in services)
+            <h2 class="section-title reveal">
+                World-Class <span class="gradient-text">Care for Mothers &amp; Children</span>
+            </h2>
+
+            <p class="section-subtitle reveal">
+                Premium healthcare services with compassion, expertise, and cutting-edge medical support.
+            </p>
+        </div>
+
+        <div class="services-bento">
+            @{
+                var services = new[]
                 {
-                    <div class="service-card reveal" style="background:@svc.Bg">
-                        <div class="service-card-icon" style="background:@(svc.Accent)20">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="@svc.Accent" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <h3>@svc.Title</h3>
-                        <p>@svc.Desc</p>
-                        <div class="service-card-line" style="background:linear-gradient(90deg,@svc.Accent,transparent)"></div>
-                    </div>
-                }
-            </div>
-        </div>
-    </section>
+                    new {
+                        Number = "01",
+                        Title = "Child Vaccination",
+                        Desc = "Complete immunization schedules for all age groups to protect against preventable diseases.",
+                        Accent = "#0EA5E9",
+                        Icon = "/images/vaccination.png",
+                        BgImage = "https://images.pexels.com/photos/7653329/pexels-photo-7653329.jpeg"   // transparent PNG
+                    },
+                    new {
+                        Number = "02",
+                        Title = "Newborn Care",
+                        Desc = "Specialized care for newborns including health assessments, feeding support and early development.",
+                        Accent = "#10B981",
+                        Icon = "/images/mother-and-baby.gif",
+                        BgImage = "https://images.pexels.com/photos/7282608/pexels-photo-7282608.jpeg"       // transparent PNG
+                    },
+                    new {
+                        Number = "03",
+                        Title = "Women's Health Checkups",
+                        Desc = "Routine and preventive health screenings tailored for women at every stage of life.",
+                        Accent = "#8B5CF6",
+                        Icon = "/images/requirements.gif",
+                        BgImage = "https://images.pexels.com/photos/5215008/pexels-photo-5215008.jpeg"      // transparent PNG
+                    },
+                    new {
+                        Number = "04",
+                        Title = "Prenatal Care",
+                        Desc = "Early pregnancy monitoring, nutrition guidance and preparation for childbirth.",
+                        Accent = "#F97316",
+                        Icon = "/images/pregnant-woman.gif",
+                        BgImage = "https://images.pexels.com/photos/7108420/pexels-photo-7108420.jpeg"      // transparent PNG
+                    }
+                };
+            }
 
+            @foreach (var svc in services)
+            {
+                <div class="service-card reveal" style="--accent: @svc.Accent; background-image: url('@svc.BgImage'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+                    <!-- FULL IMAGE / ICON LAYER (visible by default) -->
+                    <div class="card-image-layer">
+                        <div class="icon-bg">
+                            <img src="@svc.Icon" alt="@svc.Title">
+                        </div>
+                        <span class="service-number">@svc.Number</span>
+                    </div>
+
+                    <!-- CONTENT LAYER (slides in from RIGHT on hover) -->
+                    <div class="card-content-layer">
+                        <div class="content-inner">
+                            <h3>@svc.Title</h3>
+                            <p>@svc.Desc</p>
+                            <a href="#" class="service-btn">
+                                <span>Learn More</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+   
+    document.addEventListener('DOMContentLoaded', () => {
+        const reveals = document.querySelectorAll('.premium-services .reveal');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        reveals.forEach(el => observer.observe(el));
+    });
+</script>
     <!-- ===== WHY CHOOSE US ===== -->
     <section class="why-section" id="why-choose-us">
         <div class="why-bg-text"><span>WHY US</span></div>
@@ -477,32 +925,84 @@
                 <p class="section-subtitle reveal">We go beyond treating illness — we build lasting relationships built on trust, expertise, and genuine care.</p>
             </div>
 
-            <div class="why-grid">
-                @{
-                    var whyItems = new[] {
-                        // new { Title = "Experienced Specialists", Desc = "Board-certified doctors with 10+ years of specialized expertise in pediatrics and gynecology.", Color = "#0EA5E9" },
-                        new { Title = "Modern Equipment", Desc = "Advanced diagnostic and treatment technology ensuring accurate diagnoses and effective care.", Color = "#6366F1" },
-                        // new { Title = "Patient-Centered Care", Desc = "Your comfort and wellbeing are at the heart of every decision we make in your treatment.", Color = "#E11D48" },
-                        // new { Title = "Safe Environment", Desc = "Sterile, sanitized facilities with strict protocols ensuring a completely safe healthcare environment.", Color = "#16A34A" },
-                        new { Title = "Affordable Treatment", Desc = "Transparent pricing and flexible payment options making quality healthcare accessible to all.", Color = "#D97706" },
-                        new { Title = "Emergency Support", Desc = "Round-the-clock emergency care with rapid response times when your family needs it most.", Color = "#DC2626" },
-                        new { Title = "Trusted Healthcare", Desc = "Over 5000 satisfied patients trust Vinayak Hospital for their most important health decisions.", Color = "#7C3AED" },
-                        // new { Title = "Personalized Care", Desc = "Customized treatment plans tailored to each patient's unique health needs and lifestyle.", Color = "#0891B2" }
-                    };
-                }
-                @foreach (var item in whyItems)
-                {
-                    <div class="why-card reveal" style="position:relative">
-                        <div class="why-card-icon" style="background:@(item.Color)15">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="@item.Color" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        </div>
-                        <h3>@item.Title</h3>
-                        <p>@item.Desc</p>
-                        <div class="why-card-bottom-line" style="background:linear-gradient(90deg,@item.Color,transparent)"></div>
-                    </div>
-                }
+        <div class="why-timeline">
+
+    @{
+        var timelineIndex = 0;
+
+        var whyItems = new[]
+        {
+            new {
+                Title = "Modern Equipment",
+                Desc = "Advanced diagnostic and treatment technology ensuring accurate diagnoses and effective care.",
+                Color = "#6366F1"
+            },
+
+            new {
+                Title = "Affordable Treatment",
+                Desc = "Transparent pricing and flexible payment options making quality healthcare accessible to all.",
+                Color = "#D97706"
+            },
+
+            new {
+                Title = "Emergency Support",
+                Desc = "Round-the-clock emergency care with rapid response times when your family needs it most.",
+                Color = "#DC2626"
+            },
+
+            new {
+                Title = "Trusted Healthcare",
+                Desc = "Over 5000 satisfied patients trust Vinayak Hospital for their most important health decisions.",
+                Color = "#7C3AED"
+            }
+        };
+    }
+
+    @foreach (var item in whyItems)
+    {
+
+        <div class="why-item @(timelineIndex % 2 == 0 ? "left" : "right") reveal">
+
+            <span class="why-dot" style="background:@item.Color"></span>
+
+            <div class="why-card">
+
+                <div class="why-card-icon"
+                     style="background:rgba(0,0,0,.04); border:1px solid @(item.Color);">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="28"
+                         height="28"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="@item.Color"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+
+                    </svg>
+
+                </div>
+
+                <h3>@item.Title</h3>
+
+                <p>@item.Desc</p>
+
+                <div class="why-card-bottom-line"
+                     style="background:linear-gradient(90deg,@item.Color,transparent)">
+                </div>
+
             </div>
 
+        </div>
+
+        timelineIndex++;
+    }
+
+</div>
+</div>
     </section>
     @*         <!-- CTA Banner -->
             <div class="cta-banner reveal">
@@ -1029,7 +1529,7 @@
                         <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
                         <li><a href="#appointment">Book Appointment</a></li>
                     </ul>
-                </div>
+                </div>f
 
                 <!-- Services -->
                 <div class="footer-col">

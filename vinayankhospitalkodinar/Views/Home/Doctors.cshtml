@@ -1,110 +1,87 @@
-﻿
-<section class="doctors-section" id="doctors">
+﻿<section class="doctors-section" id="doctors">
     <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden">
         <div style="position:absolute;top:80px;left:40px;width:288px;height:288px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.08) 0%,transparent 70%)" class="animate-float-reverse"></div>
         <div style="position:absolute;bottom:80px;right:40px;width:256px;height:256px;border-radius:50%;background:radial-gradient(circle,rgba(236,72,153,0.08) 0%,transparent 70%)" class="animate-float"></div>
     </div>
     <div class="container" style="position:relative;z-index:1">
-        <div class="section-header" style="padding-top:60px;">
-            @* <div class="section-badge">
+        <div class="section-header">
+            <div class="section-badge">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                 <span>Our Specialist Doctors</span>
-            </div> *@
+            </div>
             <h2 class="section-title reveal">Expert Doctors You Can <span class="gradient-text">Trust</span></h2>
             <p class="section-subtitle reveal">Our highly qualified specialists bring years of experience and genuine compassion to every patient encounter.</p>
         </div>
 
         <div class="doctors-grid">
-            <!-- Pediatrician Card -->
-            <div class="doctor-card reveal-left" style="border:1px solid rgba(255,255,255,0.6)">
-                <div style="position:absolute;inset:0;border-radius:24px;background:#EFF6FF"></div>
-                <div class="doctor-card-inner" style="position:relative">
-                    <div class="doctor-header">
-                        <div style="display:flex;align-items:center;gap:16px">
-                            <div class="doctor-avatar" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h.01"></path><path d="M15 12h.01"></path><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"></path><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6 9 9 0 0 1 2.3-4L6 5"></path><path d="M6 5a9 9 0 0 1 2.6-2 2 2 0 0 0 3.9 0 9 9 0 0 1 5.5 4.3 2 2 0 0 1 0 3.4 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.4 9 9 0 0 1 5.6-2.3z"></path></svg>
-                            </div>
-                            <div>
-                                <div class="doctor-specialty" style="color:#0EA5E9">PEDIATRICIAN</div>
-                                <div class="doctor-title">Dr Pradhyuman D Jadav (Child Specialist)</div>
-                                <div class="doctor-stars">
-                                    @for (int i = 0; i < 5; i++)
-                                    {
-                                        <div class="doctor-star" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)"></div>
-                                    }
-                                    <span style="color:#64748B;font-size:12px;margin-left:4px">10+ Years</span>
-                                </div>
-                            </div>
-                        </div>
-                        @* <div class="doctor-badge" style="background:rgba(14,165,233,0.1);color:#0EA5E9">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                                Pediatric Excellence
-                            </div> *@
-                    </div>
-                    <p class="doctor-desc">Dedicated to the health and development of children from newborns through adolescence, providing comprehensive pediatric care with the latest medical expertise.</p>
-                    <div class="services-label">Services Offered</div>
-                    <div class="doctor-services-grid">
-                        @foreach (var svc in new[] { "Child Nutrition Guidance", "Child Vaccination", "Growth Monitoring", "Newborn Care", "Pediatric Consultation", "Development Assessment" })
-                        {
-                            <div class="service-item">
 
-                                <div class="service-item-icon" style="background:rgba(14,165,233,0.1)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                </div>
-                                <span>@svc</span>
-                            </div>
-                        }
+            <!-- Pediatrician Card -->
+            <div class="doctor-card reveal-left">
+                <!-- Full card image (replace src with your real photo) -->
+                <img src="~/images/viyananksir.jpeg"
+                     alt="Dr Pradhyuman Jadav"
+                     class="doctor-card-img">
+
+                <!-- Soft gradient overlay (always present for depth) -->
+                <div class="doctor-card-overlay" style="background:linear-gradient(to top, rgba(14,165,233,0.85) 0%, rgba(14,165,233,0.35) 40%, transparent 70%)"></div>
+
+                <!-- Content that slides up from bottom -->
+                <div class="doctor-card-content">
+                    <div class="doctor-specialty" style="color:#0EA5E9">PEDIATRICIAN</div>
+                    <div class="doctor-title">
+                        Dr Pradhyuman Jadav
+                        <br><span class="specialist">(Child Specialist)</span>
                     </div>
-                    <a asp-action="Contact" class="doctor-cta" style="background:linear-gradient(135deg,#0EA5E9,#0284C7);box-shadow:0 10px 30px rgba(14,165,233,0.3)">
-                        Book Consultation <span>→</span>
+                    <div class="doctor-stars">
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <div class="doctor-star" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)"></div>
+                        }
+                        <span style="color:#64748B;font-size:12px;margin-left:4px">10+ Years</span>
+                    </div>
+                    <p class="doctor-desc">
+                        Dedicated to the health and development of children from newborns through adolescence, providing comprehensive pediatric care with the latest medical expertise.
+                    </p>
+                    <a asp-action="Contact" class="doctor-cta" style="background:linear-gradient(135deg,#0EA5E9,#0284C7);box-shadow:0 10px 30px rgba(14,165,233,0.35)">
+                        View More Info <span>→</span>
                     </a>
                 </div>
             </div>
 
             <!-- Gynecologist Card -->
-            <div class="doctor-card reveal-right" style="border:1px solid rgba(255,255,255,0.6)">
-                <div style="position:absolute;inset:0;border-radius:24px;background:#FFF1F2"></div>
-                <div class="doctor-card-inner" style="position:relative">
-                    <div class="doctor-header">
-                        <div style="display:flex;align-items:center;gap:16px">
-                            <div class="doctor-avatar" style="background:linear-gradient(135deg,#EC4899,#BE185D)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3c0 1.7 1.3 3 3 3a3 3 0 0 0 3-3c0-1.7-1.3-3-3-3z"></path><path d="M12 8v13"></path><path d="M8 12a4 4 0 0 0 8 0"></path></svg>
-                            </div>
-                            <div>
-                                <div class="doctor-specialty" style="color:#EC4899">GYNECOLOGIST</div>
-                                <div class="doctor-title">Dr Hetal P Jadav (Women's Health Specialist)</div>
-                                <div class="doctor-stars">
-                                    @for (int i = 0; i < 5; i++)
-                                    {
-                                        <div class="doctor-star" style="background:linear-gradient(135deg,#EC4899,#BE185D)"></div>
-                                    }
-                                    <span style="color:#64748B;font-size:12px;margin-left:4px">12+ Years</span>
-                                </div>
-                            </div>
-                        </div>
-                        @* <div class="doctor-badge" style="background:rgba(236,72,153,0.1);color:#EC4899">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                                Women's Wellness
-                            </div> *@
+            <div class="doctor-card reveal-right">
+                <!-- Full card image (replace src with your real photo) -->
+                <img src="~/images/vinayankmrs.jpeg"
+                     alt="Dr Hetal Jadav"
+                     class="doctor-card-img" loading="lazy"
+                     decoding="async">
+
+                <!-- Soft gradient overlay -->
+                <div class="doctor-card-overlay" style="background:linear-gradient(to top, rgba(236,72,153,0.85) 0%, rgba(236,72,153,0.35) 40%, transparent 70%)"></div>
+
+                <!-- Content that slides up from bottom -->
+                <div class="doctor-card-content">
+                    <div class="doctor-specialty" style="color:#EC4899">GYNECOLOGIST</div>
+                    <div class="doctor-title">
+                        Dr Hetal Jadav
+                        <br><span class="specialist">(Women's Health Specialist)</span>
                     </div>
-                    <p class="doctor-desc">Comprehensive women's healthcare from adolescence through menopause, offering expert gynecological care and obstetric services with compassion and expertise.</p>
-                    <div class="services-label">Services Offered</div>
-                    <div class="doctor-services-grid">
-                        @foreach (var svc in new[] { "Pregnancy Care", "Women's Health Checkups", "Prenatal Care", "Postnatal Care", "Menstrual Health", "Infertility Consultation" })
+                    <div class="doctor-stars">
+                        @for (int i = 0; i < 5; i++)
                         {
-                            <div class="service-item">
-                                <div class="service-item-icon" style="background:rgba(236,72,153,0.1)">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                </div>
-                                <span>@svc</span>
-                            </div>
+                            <div class="doctor-star" style="background:linear-gradient(135deg,#EC4899,#BE185D)"></div>
                         }
+                        <span style="color:#64748B;font-size:12px;margin-left:4px">12+ Years</span>
                     </div>
-                    <a asp-action="Contact" class="doctor-cta" style="background:linear-gradient(135deg,#EC4899,#BE185D);box-shadow:0 10px 30px rgba(236,72,153,0.3)">
-                        Book Consultation <span>→</span>
+                    <p class="doctor-desc">
+                        Comprehensive women's healthcare from adolescence through menopause, offering expert gynecological care and obstetric services with compassion and expertise.
+                    </p>
+                    <a asp-action="Contact" class="doctor-cta" style="background:linear-gradient(135deg,#EC4899,#BE185D);box-shadow:0 10px 30px rgba(236,72,153,0.35)">
+                        View More Info <span>→</span>
                     </a>
                 </div>
             </div>
+
         </div>
     </div>
 </section>

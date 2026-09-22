@@ -24,7 +24,8 @@
                 <div class="nav-logo-icon">
                     <img src="~/images/logo.png"
                          alt="Vinayak Hospital Logo"
-                         style="width:50px;height:50px;object-fit:contain;" />
+                         style="width:50px;height:50px;object-fit:contain;" loading="lazy"
+                         decoding="async" />
                 </div>
 
                 <div class="nav-logo-text">
@@ -87,7 +88,8 @@
                 <div class="nav-logo-icon">
                     <img src="~/images/logo.png"
                          alt="Vinayak Hospital Logo"
-                         style="width:55px;height:55px;object-fit:contain;" />
+                                     style="width:55px;height:55px;object-fit:contain;" loading="lazy"
+                                     decoding="async" />
                 </div>
 
                 <div class="nav-logo-text">
@@ -98,7 +100,47 @@
                     </div>
 
 
-                    <p class="footer-brand-desc">Providing trusted pediatric and gynecological healthcare with compassion, expertise, and modern medical care since 2014.</p>
+                    @* <p class="footer-brand-desc">Providing trusted pediatric and gynecological healthcare with compassion, expertise, and modern medical care since 2014.</p> *@
+                    <div class="footer-emergency">
+                        <div class="footer-emergency-label">
+                            <span class="footer-emergency-dot"></span>
+                            <span class="footer-emergency-text">Emergency</span>
+                        </div>
+                        <a href="tel:+91 90708 09010">+91 90708 09010</a>
+                        <p class="footer-emergency-sub">Available 24/7</p>
+                    </div>
+
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        @* <li><a asp-controller="Home" asp-action="Index">Home</a></li> *@
+                        <li><a asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-controller="Home" asp-action="Privacy">Privacy Policy</a></li>
+                       @*  <li><a asp-controller="Home" asp-action="Services">Services</a></li>
+                        <li><a asp-controller="Home" asp-action="Gallery">Gallery</a></li>
+                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-controller="Home" asp-action="Contact">Book Appointment</a></li>  *@
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        @* 
+                        <li><a asp-controller="Home" asp-action="Services">Child Vaccination</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Newborn Care</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Pediatric Consultation</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Pregnancy Care</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Women's Health</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Family Planning</a></li>
+                        <li><a asp-controller="Home" asp-action="Services">Prenatal Care</a></li> *@
+                        <li><a asp-controller="Home" asp-action="Services">View All Services</a></li>
+                       
+                    </ul>
                     <div class="footer-socials">
                         <a href="#" class="footer-social" aria-label="Facebook" style="color:#1877F2">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
@@ -112,35 +154,6 @@
                     </div>
                 </div>
 
-                <!-- Quick Links -->
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-controller="Home" asp-action="Doctors">Doctors</a></li>
-                        <li><a asp-controller="Home" asp-action="Services">Services</a></li>
-                        <li><a asp-controller="Home" asp-action="Gallery">Gallery</a></li>
-                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-                        <li><a asp-controller="Home" asp-action="Contact">Book Appointment</a></li>
-                    </ul>
-                </div>
-
-                <!-- Services -->
-                <div class="footer-col">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a asp-controller="Home" asp-action="Services">Child Vaccination</a></li>
-                        <li><a asp-controller="Home" asp-action="Services">Newborn Care</a></li>
-                        <li><a asp-controller="Home" asp-action="Services">Pediatric Consultation</a></li>
-                        <li><a asp-controller="Home" asp-action="Services">Pregnancy Care</a></li>
-                        <li><a asp-controller="Home" asp-action="Services">Women's Health</a></li>
-                        <li><a asp-controller="Home" asp-action="Services">Family Planning</a></li>
-                        <li><a asp-controller="Home" asp-action="Services">Prenatal Care</a></li>
-                        <li><a asp-controller="Home" asp-action="Services">Postnatal Care</a></li>
-                    </ul>
-                </div>
-
                 <!-- Contact -->
                 <div class="footer-col">
                     <h3>Contact Us</h3>
@@ -150,26 +163,26 @@
                         </div>
                         <p>Nagarpalika Stadium Road, CharaJapa, Kodinar - 362720</p>
                     </div>
-                    <div class="footer-contact-item">
+@*                     <div class="footer-contact-item">
                         <div class="footer-contact-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.31 19.79 19.79 0 0 1 1.61 2.18 2 2 0 0 1 3.59 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         </div>
                         <a href="tel:+91 90708 09010">+91 90708 09010</a>
-                    </div>
+                    </div> *@
                     <div class="footer-contact-item">
                         <div class="footer-contact-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         </div>
                         <a href="mailto:Vinayakhospital1911@gmail.com">Vinayakhospital1911@gmail.com</a>
                     </div>
-                    <div class="footer-emergency">
+@*                     <div class="footer-emergency">
                         <div class="footer-emergency-label">
                             <span class="footer-emergency-dot"></span>
                             <span class="footer-emergency-text">Emergency</span>
                         </div>
                         <a href="tel:+91 90708 09010">+91 90708 09010</a>
                         <p class="footer-emergency-sub">Available 24/7</p>
-                    </div>
+                    </div> *@
                 </div>
             </div>
 
@@ -179,10 +192,10 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#EF4444" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                     for better healthcare.
                 </p>
-                <div class="footer-bottom-links">
+@*                 <div class="footer-bottom-links">
                     <a asp-controller="Home"  asp-action="Privacy">Privacy Policy</a>
             
-                </div>
+                </div> *@
             </div>
         </div>
     </footer>
