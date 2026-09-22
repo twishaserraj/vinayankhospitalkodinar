@@ -447,3 +447,259 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const heroSlider = document.getElementById("heroSlider");
+
+        if (!heroSlider) {
+            return;
+        }
+
+        const slides = heroSlider.querySelectorAll(".hero-slide");
+        const dots = heroSlider.querySelectorAll(".hero-slider-dot");
+
+        if (slides.length <= 1) {
+            return;
+        }
+
+        let currentSlide = 0;
+        let autoSlideInterval = null;
+
+        const AUTO_SLIDE_TIME = 5000;
+
+        function showSlide(index) {
+
+            if (index >= slides.length) {
+                index = 0;
+            }
+
+            if (index < 0) {
+                index = slides.length - 1;
+            }
+
+            slides.forEach(function (slide) {
+                slide.classList.remove("active");
+            });
+
+            dots.forEach(function (dot) {
+                dot.classList.remove("active");
+            });
+
+            slides[index].classList.add("active");
+
+            if (dots[index]) {
+                dots[index].classList.add("active");
+            }
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function startAutoSlide() {
+
+            stopAutoSlide();
+
+            autoSlideInterval = setInterval(function () {
+                nextSlide();
+            }, AUTO_SLIDE_TIME);
+        }
+
+        function stopAutoSlide() {
+
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = null;
+            }
+        }
+
+        dots.forEach(function (dot, index) {
+
+            dot.addEventListener("click", function () {
+
+                showSlide(index);
+
+                startAutoSlide();
+            });
+
+        });
+
+        heroSlider.addEventListener("mouseenter", function () {
+            stopAutoSlide();
+        });
+
+        heroSlider.addEventListener("mouseleave", function () {
+            startAutoSlide();
+        });
+
+        document.addEventListener("visibilitychange", function () {
+
+            if (document.hidden) {
+                stopAutoSlide();
+            } else {
+                startAutoSlide();
+            }
+
+        });
+
+        showSlide(0);
+
+        startAutoSlide();
+
+    });
+/* =============================================
+VINAYAK HOSPITAL — PREMIUM MOTION SCRIPT
+Isko _Layout.cshtml me </body> se pehle
+<script src="~/js/premium-animations.js"></script>
+ke through add karo. Existing hero-slider script
+isse touch nahi hota.
+============================================= */
+(function () {
+    "use strict";
+
+    /* ---------- 1. SCROLL REVEAL with stagger ---------- */
+    function initScrollReveal() {
+        var items = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+        var counters = {};
+        items.forEach(function (el) {
+            var parent = el.parentElement;
+            var key = parent ? Array.prototype.indexOf.call(document.querySelectorAll("*"), parent) : 0;
+            if (counters[key] === undefined) counters[key] = 0;
+            var delay = Math.min(counters[key] * 90, 480); // stagger, capped
+            el.style.setProperty("--reveal-delay", delay + "ms");
+            counters[key]++;
+        });
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+        items.forEach(function (el) { observer.observe(el); });
+    }
+
+    /* ---------- 2. COUNTER ANIMATION ---------- */
+    function animateCounter(el) {
+        var end = parseFloat(el.getAttribute("data-end")) || 0;
+        var suffix = el.getAttribute("data-suffix") || "";
+        var duration = parseInt(el.getAttribute("data-duration"), 10) || 1800;
+        var startTime = null;
+
+        el.classList.add("counting");
+
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            // easeOutCubic
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.floor(eased * end);
+            el.textContent = current + suffix;
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                el.textContent = end + suffix;
+            }
+        }
+        requestAnimationFrame(step);
+    }
+
+    function initCounters() {
+        var counters = document.querySelectorAll(".counter[data-end]");
+        if (!counters.length) return;
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(function (el) { observer.observe(el); });
+    }
+
+    /* ---------- 3. CARD TILT (premium 3D hover) ---------- */
+    function initCardTilt() {
+        var selectors = ".service-card, .doctor-card, .why-card, .stat-card, .value-card";
+        var cards = document.querySelectorAll(selectors);
+
+        cards.forEach(function (card) {
+            card.classList.add("card-tilt");
+
+            card.addEventListener("mousemove", function (e) {
+                var rect = card.getBoundingClientRect();
+                var x = e.clientX - rect.left;
+                var y = e.clientY - rect.top;
+                var rotateX = ((y / rect.height) - 0.5) * -6;
+                var rotateY = ((x / rect.width) - 0.5) * 6;
+                card.style.transform = "perspective(900px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-6px)";
+            });
+
+            card.addEventListener("mouseleave", function () {
+                card.style.transform = "";
+            });
+        });
+    }
+
+    /* ---------- 4. RIPPLE ON CLICK (buttons) ---------- */
+    function initRipple() {
+        var selectors = ".btn-primary, .hero-btn-primary, .doctor-cta, .btn-submit, .btn-white, .hero-btn-secondary";
+        var buttons = document.querySelectorAll(selectors);
+
+        buttons.forEach(function (btn) {
+            btn.classList.add("ripple-parent");
+            btn.addEventListener("click", function (e) {
+                var rect = btn.getBoundingClientRect();
+                var circle = document.createElement("span");
+                var size = Math.max(rect.width, rect.height);
+                circle.className = "ripple-circle";
+                circle.style.width = circle.style.height = size + "px";
+                circle.style.left = (e.clientX - rect.left - size / 2) + "px";
+                circle.style.top = (e.clientY - rect.top - size / 2) + "px";
+                btn.appendChild(circle);
+                setTimeout(function () { circle.remove(); }, 650);
+            });
+        });
+    }
+
+    /* ---------- 5. HERO ORB PARALLAX ---------- */
+    function initHeroParallax() {
+        var hero = document.getElementById("hero");
+        if (!hero) return;
+        var orbs = hero.querySelectorAll(".hero-orb");
+        if (!orbs.length) return;
+
+        hero.addEventListener("mousemove", function (e) {
+            var rect = hero.getBoundingClientRect();
+            var relX = (e.clientX - rect.left) / rect.width - 0.5;
+            var relY = (e.clientY - rect.top) / rect.height - 0.5;
+
+            orbs.forEach(function (orb, i) {
+                var strength = (i + 1) * 12;
+                orb.style.transform = "translate(" + (relX * strength) + "px, " + (relY * strength) + "px)";
+            });
+        });
+
+        hero.addEventListener("mouseleave", function () {
+            orbs.forEach(function (orb) { orb.style.transform = "translate(0,0)"; });
+        });
+    }
+
+    /* ---------- 6. INIT ---------- */
+    document.addEventListener("DOMContentLoaded", function () {
+        initScrollReveal();
+        initCounters();
+        initCardTilt();
+        initRipple();
+        initHeroParallax();
+    });
+})();
+

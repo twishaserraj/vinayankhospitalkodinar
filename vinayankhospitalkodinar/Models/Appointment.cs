@@ -7,16 +7,16 @@ namespace vinayankhospitalkodinar.Models
         public int Id { get; set; }
 
         [Required]
-        public string FullName { get; set; }
+        public string ?FullName { get; set; }
 
         [Required]
-        public string MobileNumber { get; set; }
+        public string ?MobileNumber { get; set; }
 
         [Required]
-        public string Email { get; set; }
+        public string ?Email { get; set; }
 
         [Required]
-        public string DoctorName { get; set; }
+        public string ?DoctorName { get; set; }
 
         [Required]
         public DateTime AppointmentDate { get; set; }
@@ -26,3 +26,10 @@ namespace vinayankhospitalkodinar.Models
         public DateTime CreatedAt { get; set; }
     }
 }
+
+
+
+
+
+
+
