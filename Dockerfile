@@ -4,14 +4,13 @@ WORKDIR /src
 
 COPY . .
 
-# Find the .csproj file anywhere in the repository
-RUN PROJECT=$(find . -name "*.csproj" -type f | head -n 1) && \
-    echo "Found project: $PROJECT" && \
-    dotnet restore "$PROJECT"
+RUN dotnet restore "./vinayankhospitalkodinar/vinayankhospitalkodinar.csproj"
 
-# Publish the project
-RUN PROJECT=$(find . -name "*.csproj" -type f | head -n 1) && \
-    dotnet publish "$PROJECT" -c Release -o /app/publish --no-restore
+RUN dotnet publish "./vinayankhospitalkodinar/vinayankhospitalkodinar.csproj" \
+    -c Release \
+    -o /app/publish \
+    --no-restore \
+    --no-self-contained
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 
@@ -23,4 +22,4 @@ ENV ASPNETCORE_URLS=http://+:8080
 
 EXPOSE 8080
 
-ENTRYPOINT ["sh", "-c", "dotnet $(find /app -maxdepth 1 -name '*.dll' -type f | head -n 1)"]
+ENTRYPOINT ["dotnet", "vinayankhospitalkodinar.dll"]
